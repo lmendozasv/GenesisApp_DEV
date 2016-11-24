@@ -58,6 +58,11 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".NewItemStep0Ativity" />
+        <activity android:name=".ScanCodeBarActivity" />
+        <activity
+            android:name=".IdentifyByUPCActivity"
+            android:label="@string/title_activity_identify_by_upc"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

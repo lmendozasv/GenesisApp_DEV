@@ -30,4 +30,5 @@
     <string name="title_activity_task_detail">TaskDetailActivity</string>
     <string name="title_activity_add_item_scan">AddItemScanActivity</string>
     <string name="title_activity_barcode_capture">BarcodeCaptureActivity</string>
+    <string name="title_activity_identify_by_upc">IdentifyByUPCActivity</string>
 </resources>
