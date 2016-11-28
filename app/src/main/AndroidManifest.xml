@@ -57,22 +57,22 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".NewItemPackage.NewItemStep0Ativity" />
-        <activity android:name=".NewItemPackage.ScanCodeBarActivity" />
+        <activity android:name=".AddItemsFunction.NewItemStep0Ativity" />
+        <activity android:name=".AddItemsFunction.ScanCodeBarActivity" />
         <activity
-            android:name=".NewItemPackage.IdentifyByUPCActivity"
+            android:name=".AddItemsFunction.IdentifyByUPCActivity"
             android:label="@string/title_activity_identify_by_upc"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".NewItemPackage.NewItemStep1Activity"
+            android:name=".AddItemsFunction.NewItemStep1Activity"
             android:label="@string/title_activity_new_item_step1"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".NewItemPackage.ListOfProductsbyUPCActivity"
+            android:name=".AddItemsFunction.ListOfProductsbyUPCActivity"
             android:label="@string/title_activity_list_of_productsby_upc"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".NewItemPackage.NewItemStatus"
+            android:name=".AddItemsFunction.NewItemStatus"
             android:label="@string/title_activity_new_item_status"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

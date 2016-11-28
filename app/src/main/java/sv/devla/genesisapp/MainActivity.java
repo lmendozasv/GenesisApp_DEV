@@ -15,7 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import sv.devla.genesisapp.NewItemPackage.NewItemStep0Ativity;
+import sv.devla.genesisapp.AddItemsFunction.NewItemStep0Ativity;
 
 import static sv.devla.genesisapp.R.menu.main;
 
