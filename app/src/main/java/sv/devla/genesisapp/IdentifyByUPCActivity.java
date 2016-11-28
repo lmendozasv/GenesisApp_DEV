@@ -22,7 +22,7 @@ import android.widget.Toast;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONException;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.InputStream;
@@ -30,6 +30,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import static android.R.attr.name;
 
 public class IdentifyByUPCActivity extends AppCompatActivity {
     String upc ="";
@@ -146,40 +148,42 @@ public class IdentifyByUPCActivity extends AppCompatActivity {
 
                     //CONTAR ELEMENTOS DEVUELTOS Y MOSTRAR LISTA O UNITARIO
 
-                    for (int i = 0; i<mArray.length(); i++) {
-                        try {
-                            tmp = mArray.getJSONObject(i).getInt("id");
-                            id_count = id_count + 1;
-                        }
-                        catch (JSONException e) {
-                            // If id doesn't exist, this exception is thrown
-                        }
-                        try {
-                            tmp = mArray.getJSONObject(i).getInt("number_of_devices");
-                            devices_count = devices_count + 1;
-                        }
-                        catch (JSONException e) {
-                            // If number_of_devices doesn't exist, this exception is thrown
-                        }
+                    JSONArray jsonarray = new JSONArray(resulting_json);
+                    for (int i = 0; i < jsonarray.length(); i++) {
+                        JSONObject jsonobject = jsonarray.getJSONObject(i);
+                        product_name = jsonobject.getString("productname");
+                        image_url = jsonobject.getString("imageurl");
+
+                        product_name=jsonObject.getString("productname");
+                        product_price=jsonObject.getString("price");
+                        image_url=jsonObject.getString("imageurl");
+                        product_currency=jsonObject.getString("currency");
+
+                        namestr=image_url;
+
+                        Log.d("NOMBRE",product_name);
+                        Log.d("PRECIO",product_price);
+                        Log.d("URL_IMAGEN",image_url);
+                        Log.d("MONEDA",product_currency);
                     }
 
 
 
 
-                    jsonObject=jsonObject.getJSONObject("0");
-
-
-                     product_name=jsonObject.getString("productname");
-                    product_price=jsonObject.getString("price");
-                    image_url=jsonObject.getString("imageurl");
-                    product_currency=jsonObject.getString("currency");
-
-                    namestr=image_url;
-
-                    Log.d("NOMBRE",product_name);
-                    Log.d("PRECIO",product_price);
-                    Log.d("URL_IMAGEN",image_url);
-                    Log.d("MONEDA",product_currency);
+//                    jsonObject=jsonObject.getJSONObject("0");
+//
+//
+//                     product_name=jsonObject.getString("productname");
+//                    product_price=jsonObject.getString("price");
+//                    image_url=jsonObject.getString("imageurl");
+//                    product_currency=jsonObject.getString("currency");
+//
+//                    namestr=image_url;
+//
+//                    Log.d("NOMBRE",product_name);
+//                    Log.d("PRECIO",product_price);
+//                    Log.d("URL_IMAGEN",image_url);
+//                    Log.d("MONEDA",product_currency);
 
                     if(product_name.length()<3){
                         // producto no encontrado

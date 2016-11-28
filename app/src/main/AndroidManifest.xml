@@ -66,6 +66,10 @@
         <activity
             android:name=".NewItemStep1Activity"
             android:label="@string/title_activity_new_item_step1"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ListOfProductsbyUPCActivity"
+            android:label="@string/title_activity_list_of_productsby_upc"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

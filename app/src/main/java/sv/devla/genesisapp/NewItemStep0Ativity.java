@@ -21,6 +21,8 @@ public class NewItemStep0Ativity extends AppCompatActivity {
 
 
         Button btn1 = (Button) this.findViewById(R.id.btnsi);
+        Button btn2 = (Button) this.findViewById(R.id.btnno);
+
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,6 +54,36 @@ if(isNetworkAvailable()){
         });
         //new IntentIntegrator(this).initiateScan();
 
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //inicio
+
+                if(isNetworkAvailable()){
+                    Intent i = new Intent(NewItemStep0Ativity.this, NewItemStep1Activity.class);
+                    startActivity(i);
+                    finish();
+                }
+                else {
+                    new AlertDialog.Builder(NewItemStep0Ativity.this)
+                            .setTitle("No hay internet")
+                            .setMessage("No hay una conexión de internet estable, por favor solucione el problema de internet e intente de nuevo")
+                            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    // continue with delete
+                                }
+                            })
+
+                            .setIcon(android.R.drawable.ic_dialog_alert)
+                            .show();
+                }
+
+
+                //fin
+
+            }
+        });
     }
     private boolean isNetworkAvailable() {
         ConnectivityManager connectivityManager
