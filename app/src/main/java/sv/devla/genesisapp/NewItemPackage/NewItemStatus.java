@@ -1,4 +1,4 @@
-package sv.devla.genesisapp;
+package sv.devla.genesisapp.NewItemPackage;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -7,12 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-public class NewItemStep1Activity extends AppCompatActivity {
+import sv.devla.genesisapp.R;
+
+public class NewItemStatus extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_item_step1);
+        setContentView(R.layout.activity_new_item_status);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

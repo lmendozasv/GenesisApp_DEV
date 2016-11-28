@@ -1,4 +1,4 @@
-package sv.devla.genesisapp;
+package sv.devla.genesisapp.NewItemPackage;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,6 +11,7 @@ import android.view.View;
 import com.google.zxing.Result;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
+import sv.devla.genesisapp.R;
 
 public class ScanCodeBarActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
     private ZXingScannerView mScannerView;
@@ -22,7 +23,7 @@ public class ScanCodeBarActivity extends AppCompatActivity implements ZXingScann
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);  
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan_code_bar);
 
 

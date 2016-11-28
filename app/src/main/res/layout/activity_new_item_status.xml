@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="sv.devla.genesisapp.NewItemPackage.IdentifyByUPCActivity">
+    tools:context="sv.devla.genesisapp.NewItemPackage.NewItemStatus">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_identify_by_upc" />
+    <include layout="@layout/content_new_item_status" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

@@ -1,4 +1,4 @@
-package sv.devla.genesisapp;
+package sv.devla.genesisapp.NewItemPackage;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -10,6 +10,8 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+
+import sv.devla.genesisapp.R;
 
 public class NewItemStep0Ativity extends AppCompatActivity {
 

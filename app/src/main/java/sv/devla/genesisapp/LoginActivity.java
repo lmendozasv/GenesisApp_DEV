@@ -42,6 +42,8 @@ package sv.devla.genesisapp;
     import java.util.ArrayList;
     import java.util.List;
 
+    import sv.devla.genesisapp.GenUtils.JSONParserAlt;
+
     import static android.Manifest.permission.READ_CONTACTS;
 
     public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {

@@ -1,4 +1,4 @@
-package sv.devla.genesisapp;
+package sv.devla.genesisapp.NewItemPackage;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -7,12 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-public class ListOfProductsbyUPCActivity extends AppCompatActivity {
+import sv.devla.genesisapp.R;
+
+public class NewItemStep1Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_of_productsby_upc);
+        setContentView(R.layout.activity_new_item_step1);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -24,6 +26,8 @@ public class ListOfProductsbyUPCActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        fab.setImageResource(R.drawable.ic_next);
     }
 
 }

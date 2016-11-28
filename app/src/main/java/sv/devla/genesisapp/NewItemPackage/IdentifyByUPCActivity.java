@@ -1,4 +1,4 @@
-package sv.devla.genesisapp;
+package sv.devla.genesisapp.NewItemPackage;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -31,7 +31,8 @@ import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import static android.R.attr.name;
+import sv.devla.genesisapp.R;
+import sv.devla.genesisapp.ServiceHandler;
 
 public class IdentifyByUPCActivity extends AppCompatActivity {
     String upc ="";
