@@ -32,7 +32,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import sv.devla.genesisapp.R;
-import sv.devla.genesisapp.ServiceHandler;
+import sv.devla.genesisapp.GenUtils.ServiceHandler;
 
 public class IdentifyByUPCActivity extends AppCompatActivity {
     String upc ="";

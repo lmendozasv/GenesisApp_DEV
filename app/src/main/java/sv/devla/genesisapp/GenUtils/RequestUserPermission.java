@@ -1,4 +1,4 @@
-package sv.devla.genesisapp;
+package sv.devla.genesisapp.GenUtils;
 
 
 import android.app.Activity;

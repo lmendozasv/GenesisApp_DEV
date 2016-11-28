@@ -43,6 +43,7 @@ package sv.devla.genesisapp;
     import java.util.List;
 
     import sv.devla.genesisapp.GenUtils.JSONParserAlt;
+    import sv.devla.genesisapp.GenUtils.ServiceHandler;
 
     import static android.Manifest.permission.READ_CONTACTS;
 

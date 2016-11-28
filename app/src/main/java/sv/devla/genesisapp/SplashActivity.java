@@ -13,6 +13,8 @@ import android.preference.PreferenceManager;
 import java.util.ArrayList;
 import java.util.List;
 
+import sv.devla.genesisapp.GenUtils.RequestUserPermission;
+
 public class SplashActivity extends Activity {
 
     // Splash screen timer
