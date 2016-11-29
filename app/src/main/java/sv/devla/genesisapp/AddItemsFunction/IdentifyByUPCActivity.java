@@ -19,6 +19,7 @@ import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -408,6 +409,18 @@ if(otherCurrency.length()>0){
                 ListView listContent = (ListView)findViewById(R.id.contenttask);
                 ma = new AdaptadorLista();
                 listContent.setAdapter(ma);
+
+
+                listContent.setOnItemClickListener(new AdapterView.OnItemClickListener()
+                {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapter, View v, int position,
+                                            long arg3)
+                    {
+                        String value = (String)adapter.getItemAtPosition(position);
+                        Log.d("Click Click","Clicked: "+value.toString());
+                    }
+                });
 
             }
             else
