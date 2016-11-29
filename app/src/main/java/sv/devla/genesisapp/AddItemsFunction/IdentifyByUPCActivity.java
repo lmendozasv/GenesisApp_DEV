@@ -138,7 +138,7 @@ public class IdentifyByUPCActivity extends AppCompatActivity {
             param.add(new BasicNameValuePair("request_type", "3"));
             param.add(new BasicNameValuePair("access_token", "35B2E35C-3DEC-4502-8BE4-6D7661D3CE9B"));
             //param.add(new BasicNameValuePair("upc", upc));
-            param.add(new BasicNameValuePair("upc", "887961037814"));//887961037814//031262053596//044194959157
+            param.add(new BasicNameValuePair("upc", "031262053596"));//887961037814//031262053596//044194959157
             //param.add(new BasicNameValuePair("upc", "887961037814"));
             //044194959157
             try {
@@ -560,7 +560,7 @@ if(otherCurrency.length()>0){
             lblfecha= (TextView) vi.findViewById(R.id.fecha);
 
 
-            ImageView image = (ImageView) vi.findViewById(R.id.image_view);
+
 
             //Log.d("array ",names.toString());
             String title=NamePrds.get(position);
