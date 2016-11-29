@@ -71,6 +71,7 @@ public class IdentifyByUPCActivity extends AppCompatActivity {
 
     Button load_img;
     ImageView img;
+    ImageView imgList;
     Bitmap bitmap;
 
     SharedPreferences sp;
@@ -509,11 +510,6 @@ if(otherCurrency.length()>0){
         }
 
         protected void onPostExecute(Bitmap image) {
-
-
-
-
-
             if(image != null){
                 img.setImageBitmap(image);
                 progress.dismiss();
