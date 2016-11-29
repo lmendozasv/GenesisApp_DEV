@@ -22,17 +22,17 @@ import android.widget.Toast;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import sv.devla.genesisapp.R;
 import sv.devla.genesisapp.GenUtils.ServiceHandler;
+import sv.devla.genesisapp.R;
 
 public class IdentifyByUPCActivity extends AppCompatActivity {
     String upc ="";
@@ -128,8 +128,8 @@ public class IdentifyByUPCActivity extends AppCompatActivity {
             ArrayList<NameValuePair> param = new ArrayList<NameValuePair>();
             param.add(new BasicNameValuePair("request_type", "3"));
             param.add(new BasicNameValuePair("access_token", "35B2E35C-3DEC-4502-8BE4-6D7661D3CE9B"));
-            param.add(new BasicNameValuePair("upc", upc));
-            //param.add(new BasicNameValuePair("upc", "044194959157"));887961037814
+            //param.add(new BasicNameValuePair("upc", upc));
+            param.add(new BasicNameValuePair("upc", "031262053596"));//887961037814//031262053596//044194959157
             //param.add(new BasicNameValuePair("upc", "887961037814"));
             //044194959157
             try {
@@ -142,6 +142,10 @@ public class IdentifyByUPCActivity extends AppCompatActivity {
                 JSONObject ja = new JSONObject(resulting_json);
                 resu=resulting_json;
 
+
+
+
+
                 if (ja != null || !ja.equals("{ }") || ja.length()>10) { //si la respuesta del servidor fur valida
 
 
@@ -149,24 +153,48 @@ public class IdentifyByUPCActivity extends AppCompatActivity {
 
                     //CONTAR ELEMENTOS DEVUELTOS Y MOSTRAR LISTA O UNITARIO
 
-                    JSONArray jsonarray = new JSONArray(resulting_json);
-                    for (int i = 0; i < jsonarray.length(); i++) {
-                        JSONObject jsonobject = jsonarray.getJSONObject(i);
-                        product_name = jsonobject.getString("productname");
-                        image_url = jsonobject.getString("imageurl");
+                    JSONObject resobj = new JSONObject(resulting_json);
+                    Iterator<?> keys = resobj.keys();
+                    while(keys.hasNext() ) {
+                        String key = (String)keys.next();
+                        if ( resobj.get(key) instanceof JSONObject ) {
+                            JSONObject xx = new JSONObject(resobj.get(key).toString());
 
-                        product_name=jsonObject.getString("productname");
-                        product_price=jsonObject.getString("price");
-                        image_url=jsonObject.getString("imageurl");
-                        product_currency=jsonObject.getString("currency");
+                            Log.d("res1",xx.getString("productname"));
+                            Log.d("res2",xx.getString("price"));
 
-                        namestr=image_url;
 
-                        Log.d("NOMBRE",product_name);
-                        Log.d("PRECIO",product_price);
-                        Log.d("URL_IMAGEN",image_url);
-                        Log.d("MONEDA",product_currency);
+                            product_name = xx.getString("productname");
+                        image_url = xx.getString("imageurl");
+
+                            product_name=xx.getString("productname");
+                        product_price=xx.getString("price");
+                        image_url=xx.getString("imageurl");
+                        product_currency=xx.getString("currency");
+
+                       namestr=image_url;
+
+
+                        }
                     }
+//                    JSONArray jsonarray = new JSONArray(resulting_json);
+//                    for (int i = 0; i < jsonarray.length(); i++) {
+//                        JSONObject jsonobject = jsonarray.getJSONObject(i);
+//                        product_name = jsonobject.getString("productname");
+//                        image_url = jsonobject.getString("imageurl");
+//
+//                        product_name=jsonObject.getString("productname");
+//                        product_price=jsonObject.getString("price");
+//                        image_url=jsonObject.getString("imageurl");
+//                        product_currency=jsonObject.getString("currency");
+//
+//                        namestr=image_url;
+//
+//                        Log.d("NOMBRE",product_name);
+//                        Log.d("PRECIO",product_price);
+//                        Log.d("URL_IMAGEN",image_url);
+//                        Log.d("MONEDA",product_currency);
+//                    }
 
 
 
