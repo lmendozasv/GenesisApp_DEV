@@ -1,6 +1,7 @@
 package sv.devla.genesisapp.AddItemsFunction;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -14,11 +15,19 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.util.SparseBooleanArray;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.amulyakhare.textdrawable.TextDrawable;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -43,7 +52,7 @@ public class IdentifyByUPCActivity extends AppCompatActivity {
     String product_name ="";
     String product_price="";
     String image_url="";
-
+    int ResultSet=0;
     String product_currency="";
     TextView txtname=null;
     TextView txtprice=null;
@@ -57,7 +66,7 @@ public class IdentifyByUPCActivity extends AppCompatActivity {
     private getUserDetailsTask mAuthTask = null;
     ProgressDialog progress;
 
-
+    AdaptadorLista ma ;
 
     Button load_img;
     ImageView img;
@@ -66,6 +75,12 @@ public class IdentifyByUPCActivity extends AppCompatActivity {
     SharedPreferences sp;
     SharedPreferences.Editor spe;
     TextView allDebug=null;
+
+    ArrayList<String> NamePrds = new ArrayList<String>();
+    ArrayList<String> PricePrds = new ArrayList<String>();
+    ArrayList<String> ImagePrds = new ArrayList<String>();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,19 +109,13 @@ public class IdentifyByUPCActivity extends AppCompatActivity {
 
         mAuthTask.execute((Void) null);
 
-        progress = ProgressDialog.show(this, "Buscando",
-                "Espere un momento...", true);
-
-
-
-
+        progress = ProgressDialog.show(this, "Buscando", "Espere un momento...", true);
 
         img=(ImageView)this.findViewById(R.id.ivProduct);
 
         this.setTitle("Información de referencia");
 
-        allDebug  = (TextView) this.findViewById(R.id.txtall);
-
+        //allDebug  = (TextView) this.findViewById(R.id.txtall);
     }
 
 
@@ -129,7 +138,7 @@ public class IdentifyByUPCActivity extends AppCompatActivity {
             param.add(new BasicNameValuePair("request_type", "3"));
             param.add(new BasicNameValuePair("access_token", "35B2E35C-3DEC-4502-8BE4-6D7661D3CE9B"));
             //param.add(new BasicNameValuePair("upc", upc));
-            param.add(new BasicNameValuePair("upc", "031262053596"));//887961037814//031262053596//044194959157
+            param.add(new BasicNameValuePair("upc", "887961037814"));//887961037814//031262053596//044194959157
             //param.add(new BasicNameValuePair("upc", "887961037814"));
             //044194959157
             try {
@@ -148,6 +157,9 @@ public class IdentifyByUPCActivity extends AppCompatActivity {
 
                 if (ja != null || !ja.equals("{ }") || ja.length()>10) { //si la respuesta del servidor fur valida
 
+                    NamePrds.clear();
+                    PricePrds.clear();
+                    ImagePrds.clear();
 
                     JSONObject jsonObject=new JSONObject(resulting_json);
 
@@ -163,56 +175,25 @@ public class IdentifyByUPCActivity extends AppCompatActivity {
                             Log.d("res1",xx.getString("productname"));
                             Log.d("res2",xx.getString("price"));
 
-
                             product_name = xx.getString("productname");
-                        image_url = xx.getString("imageurl");
-
+                            image_url = xx.getString("imageurl");
                             product_name=xx.getString("productname");
-                        product_price=xx.getString("price");
-                        image_url=xx.getString("imageurl");
-                        product_currency=xx.getString("currency");
+                            product_price=xx.getString("price");
+                            image_url=xx.getString("imageurl");
+                            product_currency=xx.getString("currency");
+                            namestr=image_url;
 
-                       namestr=image_url;
-
-
+                            NamePrds.add(product_name.toString());
+                            PricePrds.add(product_price.toString());
+                            ImagePrds.add(image_url.toString());
+                            ResultSet=ResultSet+1;
                         }
                     }
-//                    JSONArray jsonarray = new JSONArray(resulting_json);
-//                    for (int i = 0; i < jsonarray.length(); i++) {
-//                        JSONObject jsonobject = jsonarray.getJSONObject(i);
-//                        product_name = jsonobject.getString("productname");
-//                        image_url = jsonobject.getString("imageurl");
-//
-//                        product_name=jsonObject.getString("productname");
-//                        product_price=jsonObject.getString("price");
-//                        image_url=jsonObject.getString("imageurl");
-//                        product_currency=jsonObject.getString("currency");
-//
-//                        namestr=image_url;
-//
-//                        Log.d("NOMBRE",product_name);
-//                        Log.d("PRECIO",product_price);
-//                        Log.d("URL_IMAGEN",image_url);
-//                        Log.d("MONEDA",product_currency);
-//                    }
 
-
-
-
-//                    jsonObject=jsonObject.getJSONObject("0");
-//
-//
-//                     product_name=jsonObject.getString("productname");
-//                    product_price=jsonObject.getString("price");
-//                    image_url=jsonObject.getString("imageurl");
-//                    product_currency=jsonObject.getString("currency");
-//
-//                    namestr=image_url;
-//
-//                    Log.d("NOMBRE",product_name);
-//                    Log.d("PRECIO",product_price);
-//                    Log.d("URL_IMAGEN",image_url);
-//                    Log.d("MONEDA",product_currency);
+                    Log.d("NOMBRE",product_name);
+                    Log.d("PRECIO",product_price);
+                    Log.d("URL_IMAGEN",image_url);
+                    Log.d("MONEDA",product_currency);
 
                     if(product_name.length()<3){
                         // producto no encontrado
@@ -251,19 +232,7 @@ public class IdentifyByUPCActivity extends AppCompatActivity {
                         //si hay producto
 
 
-                        Timer timer = new Timer();
-                        timer.schedule(new TimerTask() {
-                            @Override
-                            public void run() {
-                                runOnUiThread(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        IdentifyByUPCActivity.this.loadImage();
 
-                                    }
-                                });
-                            }
-                        },  1); // End of your timer code.
 
 
 
@@ -338,35 +307,7 @@ else{
     otherCurrency=product_currency;
 }
 
-            Timer timer = new Timer();
-            timer.schedule(new TimerTask() {
-                @Override
-                public void run() {
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
 
-
-
-
-                            txtname=(TextView)IdentifyByUPCActivity.this.findViewById(R.id.txtName);
-                            txtname.setText(""+product_name);
-
-
-                        //    txtcurrency=(TextView)IdentifyByUPCActivity.this.findViewById(R.id.txtCurrency);
-                        //    txtcurrency.setText("Moneda: "+product_currency);
-
-
-                            txtprice=(TextView)IdentifyByUPCActivity.this.findViewById(R.id.txtPrice);
-                            txtprice.setText("Precio $: "+product_price);
-
-
-
-
-                        }
-                    });
-                }
-            },  10); // End of your timer code.
 
 
 // convertir si no es USD
@@ -440,7 +381,80 @@ if(otherCurrency.length()>0){
 
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(IdentifyByUPCActivity.this);
             upc=preferences.getString("UPC", "0");
-            upc2= "";
+            //upc2= "";
+
+
+
+            if(ResultSet>1){//display lista
+
+                TextView vtxtUPC =(TextView)IdentifyByUPCActivity.this.findViewById(R.id.txtUPC);
+                ImageView vivProduct =(ImageView)IdentifyByUPCActivity.this.findViewById(R.id.ivProduct);
+                TextView vtextView5 =(TextView)IdentifyByUPCActivity.this.findViewById(R.id.textView5);
+                TextView vtxtPrice=(TextView)IdentifyByUPCActivity.this.findViewById(R.id.txtPrice);
+                TextView vtxtName=(TextView)IdentifyByUPCActivity.this.findViewById(R.id.txtName);
+                View vview2=(View)IdentifyByUPCActivity.this.findViewById(R.id.view2);
+                View vview1=(View)IdentifyByUPCActivity.this.findViewById(R.id.view1);
+                //TextView vtxtall=(TextView)IdentifyByUPCActivity.this.findViewById(R.id.txtall);
+
+                vtxtUPC.setVisibility(View.GONE);
+                vivProduct.setVisibility(View.GONE);
+                vtextView5.setVisibility(View.GONE);
+                vtxtPrice.setVisibility(View.GONE);
+                vtxtName.setVisibility(View.GONE);
+                vview1.setVisibility(View.GONE);
+                vview2.setVisibility(View.GONE);
+                //vtxtall.setVisibility(View.GONE);
+
+                ListView listContent = (ListView)findViewById(R.id.contenttask);
+                ma = new AdaptadorLista();
+                listContent.setAdapter(ma);
+
+            }
+            else
+            {//solo es un reporte
+
+                Timer timerg = new Timer();
+                timerg.schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+
+
+
+
+                                txtname=(TextView)IdentifyByUPCActivity.this.findViewById(R.id.txtName);
+                                txtname.setText(""+product_name);
+
+                                txtprice=(TextView)IdentifyByUPCActivity.this.findViewById(R.id.txtPrice);
+                                txtprice.setText("Precio $: "+product_price);
+
+
+
+
+                            }
+                        });
+                    }
+                },  10);
+
+                Timer timer = new Timer();
+                timer.schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                IdentifyByUPCActivity.this.loadImage();
+
+                            }
+                        });
+                    }
+                },  1);
+            }
+
+
+
 
 
         }
@@ -483,6 +497,10 @@ if(otherCurrency.length()>0){
 
         protected void onPostExecute(Bitmap image) {
 
+
+
+
+
             if(image != null){
                 img.setImageBitmap(image);
                 progress.dismiss();
@@ -493,6 +511,96 @@ if(otherCurrency.length()>0){
                 Toast.makeText(IdentifyByUPCActivity.this, "El adjunto no se pudo cargar", Toast.LENGTH_SHORT).show();
 
             }
+        }
+    }
+
+
+
+
+
+    class AdaptadorLista extends BaseAdapter implements CompoundButton.OnCheckedChangeListener
+    {  private SparseBooleanArray mCheckStates;
+        LayoutInflater mInflater;
+        TextView lblnombreprofesor,lblprecio,lblfecha,txt_hora;
+        TextDrawable drawable =null;
+        ImageView image=null;
+
+
+        AdaptadorLista()
+        {
+          //  mCheckStates = new SparseBooleanArray(optionsArray.size());
+            mInflater = (LayoutInflater)IdentifyByUPCActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        }
+        @Override
+        public int getCount() {
+            // TODO Auto-generated method stub
+            return NamePrds.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            // TODO Auto-generated method stub
+            return position;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            // TODO Auto-generated method stub
+
+            return 0;
+        }
+
+        @Override
+        public View getView(final int position, View convertView, ViewGroup parent) {
+            // TODO Auto-generated method stub
+            View vi=convertView;
+            if(convertView==null)
+                vi = mInflater.inflate(R.layout.prd_row, null);
+            lblprecio= (TextView) vi.findViewById(R.id.title_row);
+            lblfecha= (TextView) vi.findViewById(R.id.fecha);
+
+
+            ImageView image = (ImageView) vi.findViewById(R.id.image_view);
+
+            //Log.d("array ",names.toString());
+            String title=NamePrds.get(position);
+            String fecha_row=PricePrds.get(position);
+
+            lblprecio.setText(String.valueOf(title));
+            lblfecha.setText("$"+String.valueOf(fecha_row));
+
+
+
+
+
+
+
+
+            return vi;
+        }
+        public boolean isChecked(int position) {
+            //Toast.makeText(ContactsActivity.this, "checkeyadasasosasdasdasdasdsadasdsadsassss",1000).show();
+            return mCheckStates.get(position, false);
+
+        }
+
+        public void setChecked(int position, boolean isChecked) {
+            mCheckStates.put(position, isChecked);
+            //Toast.makeText(ContactsActivity.this, "checkeyado",1000).show();
+        }
+
+        public void toggle(int position) {
+            setChecked(position, !isChecked(position));
+            //Toast.makeText(ContactsActivity.this, "checkeyadosasdhaks",1000).show();
+        }
+        @Override
+        public void onCheckedChanged(CompoundButton buttonView,
+                                     boolean isChecked) {
+            // TODO Auto-generated method stub
+            //Toast.makeText(ContactsActivity.this, "checkeyadosssss",1000).show();
+
+
+
         }
     }
 }
