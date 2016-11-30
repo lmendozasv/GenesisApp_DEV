@@ -78,6 +78,10 @@
         <activity
             android:name=".AddItemsFunction.NewItemAddDepartment"
             android:label="@string/title_activity_new_item_add_department"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddItemsFunction.PricesRange"
+            android:label="@string/title_activity_prices_range"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity
                 //inicio
                 Intent i = new Intent(MainActivity.this, NewItemStep0Ativity.class);
                 startActivity(i);
-                finish();
+                //finish();
                 //fin
 
             }

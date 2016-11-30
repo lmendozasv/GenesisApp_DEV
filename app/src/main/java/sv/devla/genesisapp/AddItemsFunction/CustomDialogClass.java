@@ -2,6 +2,7 @@ package sv.devla.genesisapp.AddItemsFunction;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -21,10 +22,11 @@ public class CustomDialogClass extends Dialog implements
     public Dialog d;
     public Button yes, no;
     public Bitmap bm;
-    public CustomDialogClass(Activity a) {
+    public CustomDialogClass(Activity a,Bitmap k) {
         super(a);
 // TODO Auto-generated constructor stub
         this.c = a;
+        this.bm=k;
     }
 
     @Override
@@ -60,7 +62,12 @@ public class CustomDialogClass extends Dialog implements
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btndismissdialog:
-                c.finish();
+                //c.finish();
+                dismiss();
+
+                Intent i = new Intent(this.getContext(), NewItemAddDepartment.class);
+                this.getContext().startActivity(i);
+
                 break;
             default:
                 break;

@@ -9,12 +9,12 @@ import android.view.View;
 
 import sv.devla.genesisapp.R;
 
-public class NewItemAddDepartment extends AppCompatActivity {
+public class PricesRange extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_item_add_department);
+        setContentView(R.layout.activity_prices_range);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -26,11 +26,6 @@ public class NewItemAddDepartment extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
-        fab.setImageResource(R.drawable.ic_next);
-
-        this.setTitle("Clasificación por departamento");
-
     }
 
 }

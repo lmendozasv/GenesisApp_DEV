@@ -3,17 +3,18 @@ package sv.devla.genesisapp.AddItemsFunction;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -85,7 +86,7 @@ public class IdentifyByUPCActivity extends AppCompatActivity {
     ArrayList<String> NamePrds = new ArrayList<String>();
     ArrayList<String> PricePrds = new ArrayList<String>();
     ArrayList<String> ImagePrds = new ArrayList<String>();
-
+    FloatingActionButton fab =null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,12 +95,12 @@ public class IdentifyByUPCActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab= (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent i = new Intent(IdentifyByUPCActivity.this, NewItemAddDepartment.class);
+                startActivity(i);
             }
         });
 
@@ -144,8 +145,8 @@ public class IdentifyByUPCActivity extends AppCompatActivity {
             param.add(new BasicNameValuePair("request_type", "3"));
             param.add(new BasicNameValuePair("access_token", "35B2E35C-3DEC-4502-8BE4-6D7661D3CE9B"));
             //param.add(new BasicNameValuePair("upc", upc));
-            param.add(new BasicNameValuePair("upc", "031262053596"));//887961037814//031262053596//044194959157
-            //param.add(new BasicNameValuePair("upc", "887961037814"));
+            //param.add(new BasicNameValuePair("upc", "031262053596"));//887961037814//031262053596//044194959157
+            param.add(new BasicNameValuePair("upc", "887961037814"));
             //044194959157
             try {
                  resulting_json = null;
@@ -392,7 +393,7 @@ if(otherCurrency.length()>0){
 
 
             if(ResultSet>1){//display lista
-
+                fab.setVisibility(View.GONE);
                 TextView vtxtUPC =(TextView)IdentifyByUPCActivity.this.findViewById(R.id.txtUPC);
                 ImageView vivProduct =(ImageView)IdentifyByUPCActivity.this.findViewById(R.id.ivProduct);
                 TextView vtextView5 =(TextView)IdentifyByUPCActivity.this.findViewById(R.id.textView5);
@@ -658,22 +659,15 @@ if(otherCurrency.length()>0){
 
 
                         //mostrar ccd
-                        CustomDialogClass cdd=new CustomDialogClass(IdentifyByUPCActivity.this);
+                        Bitmap nbitmap = ((BitmapDrawable)holder.imagen.getDrawable()).getBitmap();
+                        CustomDialogClass cdd=new CustomDialogClass(IdentifyByUPCActivity.this,nbitmap);
                         cdd.getWindow().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
                         cdd.setCancelable(false);
                         cdd.show();
                         Button si =cdd.yes;
-                        Bitmap bs=cdd.bm;
-                        bs=bitmap;
 
 
-                        si.setOnClickListener(new View.OnClickListener() {
-                            public void onClick(View v) {
-                                //DO ALGO
-
-                            }
-                        });
-
+                        cdd.bm=nbitmap;
 
 
 
@@ -713,21 +707,17 @@ if(otherCurrency.length()>0){
                         editor.apply();
 
                         //mostrar ccd
-                        CustomDialogClass cdd=new CustomDialogClass(IdentifyByUPCActivity.this);
+                        Bitmap nbitmap = ((BitmapDrawable)holder.imagen.getDrawable()).getBitmap();
+                        CustomDialogClass cdd=new CustomDialogClass(IdentifyByUPCActivity.this,nbitmap);
                         cdd.getWindow().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
                         cdd.setCancelable(false);
                         cdd.show();
                         Button si =cdd.yes;
-                        Bitmap bs=cdd.bm;
-                        bs=bitmap;
+
+                        cdd.bm=nbitmap;
 
 
-                        si.setOnClickListener(new View.OnClickListener() {
-                            public void onClick(View v) {
-                                //DO ALGO
 
-                            }
-                        });
 
                     }
                 });
