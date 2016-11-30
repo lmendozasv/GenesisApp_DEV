@@ -74,6 +74,10 @@
         <activity
             android:name=".AddItemsFunction.NewItemStatus"
             android:label="@string/title_activity_new_item_status"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddItemsFunction.NewItemAddDepartment"
+            android:label="@string/title_activity_new_item_add_department"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

@@ -26,7 +26,7 @@
         android:layout_alignParentTop="true" />
 
     <TextView
-        android:text="UPC"
+        android:text="..."
         android:layout_width="wrap_content"
         android:gravity="center"
         android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
         android:layout_alignParentStart="true" />
 
     <TextView
-        android:text="Información"
+        android:text="Espere"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView5"
@@ -73,7 +73,7 @@
         android:layout_alignParentEnd="true" />
 
     <TextView
-        android:text="Name"
+        android:text="Buscando"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"

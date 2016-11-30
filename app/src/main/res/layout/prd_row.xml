@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
     android:elevation="2dip"
-
+    android:id="@+id/row_products"
     >
 
     <TextView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -13,12 +14,12 @@
         android:layout_height="wrap_content"
         android:text="Arqueo de caja"
         android:background="#ffffff"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:padding="10dip"
 
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true" />
+        android:layout_toEndOf="@+id/imgll" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -27,11 +28,10 @@
         android:text="Medium Text"
         android:background="#ffffff"
         android:id="@+id/fecha"
-
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="15dip"
         android:layout_below="@+id/title_row"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/imgll" />
 
     <View
         android:background="#585858"
@@ -41,5 +41,16 @@
         android:layout_below="@+id/fecha"
         android:layout_alignParentStart="true"
         android:layout_marginTop="19dp" />
+
+    <ImageView
+        android:layout_width="100dip"
+        android:layout_height="100dip"
+        android:layout_marginTop="10dip"
+        android:layout_marginBottom="10dip"
+        app:srcCompat="@android:drawable/star_big_off"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/imgll"
+        android:layout_alignBottom="@+id/view2" />
 
 </RelativeLayout>

@@ -34,4 +34,5 @@
     <string name="title_activity_new_item_step1">NewItemStep1Activity</string>
     <string name="title_activity_list_of_productsby_upc">ListOfProductsbyUPCActivity</string>
     <string name="title_activity_new_item_status">NewItemStatus</string>
+    <string name="title_activity_new_item_add_department">NewItemAddDepartment</string>
 </resources>

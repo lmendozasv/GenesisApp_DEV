@@ -6,6 +6,9 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -15,7 +18,6 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,16 +27,18 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.amulyakhare.textdrawable.TextDrawable;
-
+import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONObject;
 
 import java.io.InputStream;
+import java.lang.ref.WeakReference;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -524,20 +528,79 @@ if(otherCurrency.length()>0){
     }
 
 
+    private Bitmap downloadBitmap(String url) {
+        HttpURLConnection urlConnection = null;
+        try {
+            URL uri = new URL(url);
+            urlConnection = (HttpURLConnection) uri.openConnection();
+            int statusCode = urlConnection.getResponseCode();
+            if (statusCode != HttpStatus.SC_OK) {
+                return null;
+            }
 
+            InputStream inputStream = urlConnection.getInputStream();
+            if (inputStream != null) {
+                Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+                return bitmap;
+            }
+        } catch (Exception e) {
+            urlConnection.disconnect();
+            Log.w("ImageDownloader", "Error downloading image from " + url);
+        } finally {
+            if (urlConnection != null) {
+                urlConnection.disconnect();
+            }
+        }
+        return null;
+    }
 
+    class ImageDownloaderTask extends AsyncTask<String, Void, Bitmap> {
+        private final WeakReference<ImageView> imageViewReference;
+
+        public ImageDownloaderTask(ImageView imageView) {
+            imageViewReference = new WeakReference<ImageView>(imageView);
+        }
+
+        @Override
+        protected Bitmap doInBackground(String... params) {
+            return downloadBitmap(params[0]);
+        }
+
+        @Override
+        protected void onPostExecute(Bitmap bitmap) {
+            if (isCancelled()) {
+                bitmap = null;
+            }
+
+            if (imageViewReference != null) {
+                ImageView imageView = imageViewReference.get();
+                if (imageView != null) {
+                    if (bitmap != null) {
+                        imageView.setImageBitmap(bitmap);
+                    } else {
+                        Drawable placeholder = imageView.getContext().getResources().getDrawable(R.drawable.ic_logo);
+                        imageView.setImageDrawable(placeholder);
+                    }
+                }
+            }
+        }
+    }
 
     class AdaptadorLista extends BaseAdapter implements CompoundButton.OnCheckedChangeListener
-    {  private SparseBooleanArray mCheckStates;
+    {
         LayoutInflater mInflater;
-        TextView lblnombreprofesor,lblprecio,lblfecha,txt_hora;
-        TextDrawable drawable =null;
-        ImageView image=null;
+        TextView nombre,precio;
+        ImageView imagen=null;
 
+        class ViewHolder {
+            TextView nombre;
+            TextView precio;
+            ImageView imagen;
+            RelativeLayout row;
+        }
 
         AdaptadorLista()
         {
-          //  mCheckStates = new SparseBooleanArray(optionsArray.size());
             mInflater = (LayoutInflater)IdentifyByUPCActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
         @Override
@@ -561,47 +624,119 @@ if(otherCurrency.length()>0){
 
         @Override
         public View getView(final int position, View convertView, ViewGroup parent) {
-            // TODO Auto-generated method stub
             View vi=convertView;
+            final ViewHolder holder;
             if(convertView==null)
+            {
                 vi = mInflater.inflate(R.layout.prd_row, null);
-            lblprecio= (TextView) vi.findViewById(R.id.title_row);
-            lblfecha= (TextView) vi.findViewById(R.id.fecha);
+                holder = new ViewHolder();
+                holder.nombre = (TextView) vi.findViewById(R.id.title_row);
+                holder.precio = (TextView) vi.findViewById(R.id.fecha);
+                holder.imagen = (ImageView)vi.findViewById(R.id.imgll);
+                holder.row    =(RelativeLayout)vi.findViewById(R.id.row_products);
+                vi.setTag(holder);
+                holder.nombre.setText(NamePrds.get(position));
+                holder.precio.setText("$"+PricePrds.get(position));
+                holder.imagen=(ImageView) vi.findViewById(R.id.imgll);
+                //load image
+                holder.row.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        Log.d("sele-", NamePrds.get(position));
+
+                        //pass
+                        holder.imagen.buildDrawingCache();
+                        Bitmap bitmap = holder.imagen.getDrawingCache();
+
+
+
+                        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(IdentifyByUPCActivity.this);
+                        SharedPreferences.Editor editor = preferences.edit();
+
+                        editor.putString("cTitulo",NamePrds.get(position));
+                        editor.putString("cPrecio","$"+PricePrds.get(position));
+                        editor.apply();
+
+
+                        //mostrar ccd
+                        CustomDialogClass cdd=new CustomDialogClass(IdentifyByUPCActivity.this);
+                        cdd.getWindow().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
+                        cdd.setCancelable(false);
+                        cdd.show();
+                        Button si =cdd.yes;
+                        Bitmap bs=cdd.bm;
+                        bs=bitmap;
+
+
+                        si.setOnClickListener(new View.OnClickListener() {
+                            public void onClick(View v) {
+                                //DO ALGO
+
+                            }
+                        });
 
 
 
 
-            //Log.d("array ",names.toString());
-            String title=NamePrds.get(position);
-            String fecha_row=PricePrds.get(position);
-
-            lblprecio.setText(String.valueOf(title));
-            lblfecha.setText("$"+String.valueOf(fecha_row));
 
 
+                    }
+                });
+
+                if (holder.imagen != null) {
+                    new ImageDownloaderTask(holder.imagen).execute(ImagePrds.get(position));
+                }
+
+            }
+            else
+            {
+                holder = (ViewHolder) convertView.getTag();
+                holder.nombre.setText(NamePrds.get(position));
+                holder.precio.setText("$"+PricePrds.get(position));
+
+                if (holder.imagen != null) {
+                    new ImageDownloaderTask(holder.imagen).execute(ImagePrds.get(position));
+                }
+                holder.row.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        Log.d("selexx-", NamePrds.get(position));
+                        //pass
+                        holder.imagen.buildDrawingCache();
+                        Bitmap bitmap = holder.imagen.getDrawingCache();
 
 
+                        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(IdentifyByUPCActivity.this);
+                        SharedPreferences.Editor editor = preferences.edit();
+
+                        editor.putString("cTitulo",NamePrds.get(position));
+                        editor.putString("cPrecio","$"+PricePrds.get(position));
+
+                        editor.apply();
+
+                        //mostrar ccd
+                        CustomDialogClass cdd=new CustomDialogClass(IdentifyByUPCActivity.this);
+                        cdd.getWindow().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
+                        cdd.setCancelable(false);
+                        cdd.show();
+                        Button si =cdd.yes;
+                        Bitmap bs=cdd.bm;
+                        bs=bitmap;
 
 
+                        si.setOnClickListener(new View.OnClickListener() {
+                            public void onClick(View v) {
+                                //DO ALGO
 
+                            }
+                        });
 
+                    }
+                });
+
+            }
             return vi;
         }
-        public boolean isChecked(int position) {
-            //Toast.makeText(ContactsActivity.this, "checkeyadasasosasdasdasdasdsadasdsadsassss",1000).show();
-            return mCheckStates.get(position, false);
 
-        }
 
-        public void setChecked(int position, boolean isChecked) {
-            mCheckStates.put(position, isChecked);
-            //Toast.makeText(ContactsActivity.this, "checkeyado",1000).show();
-        }
-
-        public void toggle(int position) {
-            setChecked(position, !isChecked(position));
-            //Toast.makeText(ContactsActivity.this, "checkeyadosasdhaks",1000).show();
-        }
         @Override
         public void onCheckedChanged(CompoundButton buttonView,
                                      boolean isChecked) {
