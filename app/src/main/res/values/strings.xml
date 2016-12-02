@@ -36,4 +36,5 @@
     <string name="title_activity_new_item_status">NewItemStatus</string>
     <string name="title_activity_new_item_add_department">NewItemAddDepartment</string>
     <string name="title_activity_prices_range">PricesRange</string>
+    <string name="title_activity_new_item_set_status">NewItemSetStatusActivity</string>
 </resources>

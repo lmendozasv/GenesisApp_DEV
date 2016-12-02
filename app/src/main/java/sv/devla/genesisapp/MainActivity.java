@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.RelativeLayout;
 
 import sv.devla.genesisapp.AddItemsFunction.NewItemStep0Ativity;
+import sv.devla.genesisapp.SearchItemFunction.SearchItemByNameActivity;
 
 import static sv.devla.genesisapp.R.menu.main;
 
@@ -70,6 +71,8 @@ public class MainActivity extends AppCompatActivity
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, SearchItemByNameActivity.class);
+                startActivity(i);
             }
         });
 

@@ -36,6 +36,9 @@ android {
     repositories {
         maven { url 'https://oss.sonatype.org/content/repositories/ksoap2-android-releases' }
     }
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
 }
 
 dependencies {
@@ -63,4 +66,6 @@ dependencies {
     compile 'me.dm7.barcodescanner:zxing:1.8.4'
 
     compile 'com.google.code.ksoap2-android:ksoap2-android:3.6.0'
+
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.1'
 }
