@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
+
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="sv.devla.genesisapp.AddItemsFunction.NewItemStep0Ativity">
+
+
 
 
     <TextView
@@ -19,6 +20,9 @@
         android:layout_marginTop="43dp"
         android:id="@+id/textView2"
         android:textSize="30dip"
+        android:background="#906E6E6E"
+        android:textColor="#ffffff"
+
         android:gravity="center"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"

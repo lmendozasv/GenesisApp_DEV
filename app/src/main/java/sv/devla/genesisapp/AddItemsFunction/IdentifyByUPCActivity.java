@@ -144,9 +144,9 @@ public class IdentifyByUPCActivity extends AppCompatActivity {
             ArrayList<NameValuePair> param = new ArrayList<NameValuePair>();
             param.add(new BasicNameValuePair("request_type", "3"));
             param.add(new BasicNameValuePair("access_token", "35B2E35C-3DEC-4502-8BE4-6D7661D3CE9B"));
-            //param.add(new BasicNameValuePair("upc", upc));
+            param.add(new BasicNameValuePair("upc", upc));
             //param.add(new BasicNameValuePair("upc", "031262053596"));//887961037814//031262053596//044194959157
-            param.add(new BasicNameValuePair("upc", "887961037814"));
+            //param.add(new BasicNameValuePair("upc", "887961037814"));
             //044194959157
             try {
                  resulting_json = null;
@@ -219,6 +219,9 @@ public class IdentifyByUPCActivity extends AppCompatActivity {
                                                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                                                     public void onClick(DialogInterface dialog, int which) {
                                                         // continue with delete
+                                                        Intent i = new Intent(IdentifyByUPCActivity.this, NewItemStep1Activity.class);
+                                                        startActivity(i);
+                                                        finish();
                                                     }
                                                 })
                                                 .setIcon(android.R.drawable.ic_dialog_alert)

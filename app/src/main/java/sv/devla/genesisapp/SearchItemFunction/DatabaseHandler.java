@@ -1,8 +1,5 @@
 package sv.devla.genesisapp.SearchItemFunction;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -10,21 +7,25 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DatabaseHandler extends SQLiteOpenHelper {
 
     // for our logs
     public static final String TAG = "DatabaseHandler.java";
 
     // database version
-    private static final int DATABASE_VERSION = 4;
+    private static final int DATABASE_VERSION = 5;
 
     // database name
-    protected static final String DATABASE_NAME = "NinjaDatabase2";
+    protected static final String DATABASE_NAME = "BusquedaDB";
 
     // table details
-    public String tableName = "locations";
+    public String tableName = "tbl_prds_busqueda";
     public String fieldObjectId = "id";
     public String fieldObjectName = "name";
+    public String fieldObjectIDDB = "iddb";
 
     // constructor
     public DatabaseHandler(Context context) {
@@ -39,8 +40,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         sql += "CREATE TABLE " + tableName;
         sql += " ( ";
-        sql += fieldObjectId + " INTEGER PRIMARY KEY AUTOINCREMENT, ";
-        sql += fieldObjectName + " TEXT ";
+        sql += fieldObjectId + " INTEGER PRIMARY KEY AUTOINCREMENT, "; // control intero
+        sql += fieldObjectName + " TEXT, ";  // nombre compuesto para busqueda
+        sql += fieldObjectIDDB + " TEXT ";   //codigo de producto interno
         sql += " ) ";
 
         db.execSQL(sql);
@@ -59,7 +61,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     // create new record
     // @param myObj contains details to be added as single row.
-    public boolean create(MyObject myObj) {
+    public boolean create(ProductSearchObject myObj) {
 
         boolean createSuccessful = false;
 
@@ -69,6 +71,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
             ContentValues values = new ContentValues();
             values.put(fieldObjectName, myObj.objectName);
+            values.put(fieldObjectIDDB, myObj.objectCode);
+
             createSuccessful = db.insert(tableName, null, values) > 0;
 
             db.close();
@@ -103,9 +107,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     // Read records related to the search term
-    public List<MyObject> read(String searchTerm) {
+    public List<ProductSearchObject> read(String searchTerm) {
 
-        List<MyObject> recordsList = new ArrayList<MyObject>();
+        List<ProductSearchObject> recordsList = new ArrayList<ProductSearchObject>();
 
         // select query
         String sql = "";
@@ -125,10 +129,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
                 // int productId = Integer.parseInt(cursor.getString(cursor.getColumnIndex(fieldProductId)));
                 String objectName = cursor.getString(cursor.getColumnIndex(fieldObjectName));
-                MyObject myObject = new MyObject(objectName);
+                String objectCode = cursor.getString(cursor.getColumnIndex(fieldObjectIDDB));
+                ProductSearchObject productSearchObject = new ProductSearchObject(objectName,objectCode);
 
                 // add to list
-                recordsList.add(myObject);
+                recordsList.add(productSearchObject);
 
             } while (cursor.moveToNext());
         }

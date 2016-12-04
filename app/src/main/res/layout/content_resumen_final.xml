@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_resumen_final"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="sv.devla.genesisapp.AddItemsFunction.ResumenFinalActivity"
+    tools:showIn="@layout/activity_resumen_final">
+
+
+    <TextView
+        android:text="Resumen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView14"
+        android:textSize="20dip"
+        android:background="#906E6E6E"
+        android:textColor="#ffffff"
+
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="150dip"
+        android:layout_height="150dip"
+        app:srcCompat="@drawable/ic_menu_camera"
+        android:id="@+id/imageView4"
+        android:layout_below="@+id/textView14"
+        android:layout_centerHorizontal="true" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:background="@drawable/grd_gen_view"
+        android:layout_height="1dp"
+        android:id="@+id/view8"
+
+        android:layout_below="@+id/imageView4"
+        android:layout_alignParentStart="true"></View>
+
+    <TextView
+        android:text="Nombre:"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:id="@+id/textView18"
+        android:textSize="15dip"
+        android:layout_below="@+id/view8"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Esterilizer"
+        android:textSize="15dip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView18"
+        android:id="@+id/textView19"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/textView18"
+        android:layout_alignStart="@+id/textView21" />
+
+    <TextView
+        android:text="Marca:"
+        android:layout_width="wrap_content"
+        android:textSize="15dip"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView18"
+        android:layout_alignStart="@+id/textView18"
+        android:layout_marginTop="11dp"
+        android:id="@+id/textView20" />
+
+    <TextView
+        android:text="Philips"
+        android:layout_marginLeft="10dip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView20"
+        android:textSize="15dip"
+        android:id="@+id/textView21"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/textView22" />
+
+    <TextView
+        android:text="Departamento:"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dip"
+        android:layout_height="wrap_content"
+        android:textSize="15dip"
+        android:layout_below="@+id/textView20"
+        android:layout_alignStart="@+id/textView20"
+        android:id="@+id/textView22" />
+
+    <TextView
+        android:text="Categoría:"
+        android:textSize="15dip"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dip"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView22"
+        android:layout_alignStart="@+id/textView22"
+        android:id="@+id/textView24" />
+
+    <TextView
+        android:text="Bebés y niños"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dip"
+        android:id="@+id/textView23"
+        android:layout_alignBaseline="@+id/textView22"
+        android:layout_alignBottom="@+id/textView22"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/textView22"
+        android:layout_alignStart="@+id/textView21" />
+
+    <TextView
+        android:text="Accesorios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dip"
+        android:layout_alignBottom="@+id/textView24"
+        android:id="@+id/textView25"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/textView24"
+        android:layout_alignStart="@+id/textView23" />
+
+    <TextView
+        android:text="Precio de lista:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dip"
+        android:layout_below="@+id/textView24"
+        android:layout_alignStart="@+id/textView24"
+        android:layout_marginTop="10dp"
+        android:id="@+id/textView26" />
+
+    <TextView
+        android:text="$ 99.99"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dip"
+        android:layout_alignTop="@+id/textView26"
+        android:layout_alignStart="@+id/textView25"
+        android:id="@+id/textView27"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Descuento aplicable:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dip"
+        android:id="@+id/textView28"
+        android:layout_below="@+id/textView26"
+        android:layout_alignStart="@+id/textView26"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:text="  50%"
+        android:layout_width="wrap_content"
+        android:textSize="15dip"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView28"
+        android:layout_toEndOf="@+id/textView28"
+        android:id="@+id/textView29" />
+
+    <TextView
+        android:text="Cantidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView28"
+        android:textSize="15dip"
+        android:layout_alignStart="@+id/textView28"
+        android:layout_marginTop="12dp"
+        android:id="@+id/textView30" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dip"
+        android:inputType="number"
+        android:ems="10"
+        android:text="1"
+        android:id="@+id/editText"
+        android:layout_below="@+id/textView28"
+        android:layout_alignStart="@+id/imageView4" />
+
+    <TextView
+        android:text="Comentario:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText"
+        android:textSize="15dip"
+        android:layout_alignStart="@+id/textView30"
+        android:id="@+id/textView31" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:gravity="left"
+        android:hint="Comentarios"
+        android:ems="10"
+        android:layout_below="@+id/editText"
+        android:id="@+id/editText2"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/textView31"
+        android:layout_alignParentBottom="true" />
+
+
+</RelativeLayout>

@@ -80,14 +80,30 @@
             android:label="@string/title_activity_new_item_add_department"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AddItemsFunction.PricesRange"
+            android:name=".AddItemsFunction.StatusPricingActivity"
             android:label="@string/title_activity_prices_range"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".AddItemsFunction.NewItemSetStatusActivity"
             android:label="@string/title_activity_new_item_set_status"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".SearchItemFunction.SearchItemByNameActivity"></activity>
+        <activity android:name=".SearchItemFunction.SearchItemByNameActivity" />
+
+        <service
+            android:name=".SearchItemFunction.DatabaseUpdaterService"
+            android:enabled="true"
+            android:exported="true"
+            android:stopWithTask="false" />
+
+        <activity
+            android:name=".AddItemsFunction.AvailabilityActivity"
+            android:label="@string/title_activity_availability"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddItemsFunction.ResumenFinalActivity"
+            android:label="@string/title_activity_resumen_final"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AddItemsFunction.PrintQRGenActivity"></activity>
     </application>
 
 </manifest>

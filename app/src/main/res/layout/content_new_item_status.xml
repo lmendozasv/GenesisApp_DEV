@@ -13,4 +13,13 @@
     tools:context="sv.devla.genesisapp.AddItemsFunction.NewItemStatus"
     tools:showIn="@layout/activity_new_item_status">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/bk_gen"
+        android:id="@+id/imageView3"
+        android:alpha=".5"
+
+        />
+
 </RelativeLayout>

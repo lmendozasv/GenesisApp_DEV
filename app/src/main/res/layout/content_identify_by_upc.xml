@@ -14,7 +14,14 @@
     tools:context="sv.devla.genesisapp.AddItemsFunction.IdentifyByUPCActivity"
     tools:showIn="@layout/activity_identify_by_upc">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/bk_gen"
+        android:id="@+id/imageView3"
+        android:alpha=".5"
 
+        />
 
     <ListView
         android:id="@+id/contenttask"
@@ -47,7 +54,7 @@
         android:layout_alignParentStart="true" />
 
     <TextView
-        android:text="Espere"
+        android:text="Detalles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView5"

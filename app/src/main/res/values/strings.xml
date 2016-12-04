@@ -37,4 +37,7 @@
     <string name="title_activity_new_item_add_department">NewItemAddDepartment</string>
     <string name="title_activity_prices_range">PricesRange</string>
     <string name="title_activity_new_item_set_status">NewItemSetStatusActivity</string>
+    <string name="title_activity_availability">AvailabilityActivity</string>
+    <string name="title_activity_marca">MarcaActivity</string>
+    <string name="title_activity_resumen_final">ResumenFinalActivity</string>
 </resources>

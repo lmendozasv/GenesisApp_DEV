@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import sv.devla.genesisapp.GenUtils.RequestUserPermission;
+import sv.devla.genesisapp.SearchItemFunction.DatabaseUpdaterService;
 
 public class SplashActivity extends Activity {
 
@@ -29,6 +30,7 @@ public class SplashActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        startService(new Intent(this, DatabaseUpdaterService.class));
 
 
 

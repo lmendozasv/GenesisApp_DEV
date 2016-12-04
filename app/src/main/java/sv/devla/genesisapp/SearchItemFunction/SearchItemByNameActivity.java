@@ -1,19 +1,14 @@
 package sv.devla.genesisapp.SearchItemFunction;
-import java.util.List;
-
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
 import android.widget.ArrayAdapter;
+
+import java.util.List;
 
 import sv.devla.genesisapp.R;
 
 public class SearchItemByNameActivity extends Activity {
 
-    /*
-     * Change to type CustomAutoCompleteView instead of AutoCompleteTextView
-     * since we are extending to customize the view and disable filter
-     * The same with the XML view, type will be CustomAutoCompleteView
-     */
     CustomAutoCompleteView myAutoComplete;
 
     // adapter for auto-complete
@@ -59,41 +54,41 @@ public class SearchItemByNameActivity extends Activity {
     public void insertSampleData(){
 
         // CREATE
-        databaseH.create( new MyObject("January") );
-        databaseH.create( new MyObject("February") );
-        databaseH.create( new MyObject("March") );
-        databaseH.create( new MyObject("April") );
-        databaseH.create( new MyObject("May") );
-        databaseH.create( new MyObject("June") );
-        databaseH.create( new MyObject("July") );
-        databaseH.create( new MyObject("August") );
-        databaseH.create( new MyObject("September") );
-        databaseH.create( new MyObject("October") );
-        databaseH.create( new MyObject("November") );
-        databaseH.create( new MyObject("December") );
-        databaseH.create( new MyObject("New Caledonia") );
-        databaseH.create( new MyObject("New Zealand") );
-        databaseH.create( new MyObject("Papua New Guinea") );
-        databaseH.create( new MyObject("COFFEE-1K") );
-        databaseH.create( new MyObject("coffee raw") );
-        databaseH.create( new MyObject("authentic COFFEE") );
-        databaseH.create( new MyObject("k12-coffee") );
-        databaseH.create( new MyObject("view coffee") );
-        databaseH.create( new MyObject("Indian-coffee-two") );
+        databaseH.create( new ProductSearchObject("January","") );
+        databaseH.create( new ProductSearchObject("February","") );
+        databaseH.create( new ProductSearchObject("March","") );
+        databaseH.create( new ProductSearchObject("April","") );
+        databaseH.create( new ProductSearchObject("May","") );
+        databaseH.create( new ProductSearchObject("June","") );
+        databaseH.create( new ProductSearchObject("July","") );
+        databaseH.create( new ProductSearchObject("August","") );
+        databaseH.create( new ProductSearchObject("September","") );
+        databaseH.create( new ProductSearchObject("October","") );
+        databaseH.create( new ProductSearchObject("November","") );
+        databaseH.create( new ProductSearchObject("December","") );
+        databaseH.create( new ProductSearchObject("New Caledonia","") );;
+        databaseH.create( new ProductSearchObject("New Zealand","") );
+        databaseH.create( new ProductSearchObject("Papua New Guinea","") );
+        databaseH.create( new ProductSearchObject("COFFEE-1K","") );
+        databaseH.create( new ProductSearchObject("coffee raw","") );
+        databaseH.create( new ProductSearchObject("authentic COFFEE","") );
+        databaseH.create( new ProductSearchObject("k12-coffee","") );
+        databaseH.create( new ProductSearchObject("view coffee","") );
+        databaseH.create( new ProductSearchObject("Indian-coffee-two","") );
 
     }
 
-    // this function is used in CustomAutoCompleteTextChangedListener.java
+    // this function is used in NewCustomAutoCompleteTextChangedListener.java
     public String[] getItemsFromDb(String searchTerm){
 
         // add items on the array dynamically
-        List<MyObject> products = databaseH.read(searchTerm);
+        List<ProductSearchObject> products = databaseH.read(searchTerm);
         int rowCount = products.size();
 
         String[] item = new String[rowCount];
         int x = 0;
 
-        for (MyObject record : products) {
+        for (ProductSearchObject record : products) {
 
             item[x] = record.objectName;
             x++;

@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
+
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="sv.devla.genesisapp.AddItemsFunction.NewItemAddDepartment"
@@ -18,7 +17,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-
+        android:background="#906E6E6E"
+        android:textColor="#ffffff"
         android:textSize="30dip"
         android:gravity="center"
         android:layout_alignParentRight="true"
@@ -35,7 +35,14 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="75dp"
         android:id="@+id/spinner"
+        android:background="#A9E2F3"
         android:layout_alignParentEnd="true" />
+    <View
+        android:layout_width="wrap_content"
+        android:background="@drawable/grd_gen_view"
+        android:layout_height="1dp"
+        android:layout_below="@+id/spinner"
+        android:layout_alignParentStart="true"></View>
 
     <TextView
         android:text="Categoría"
@@ -44,11 +51,11 @@
         android:layout_below="@+id/spinner"
         android:layout_marginTop="60dp"
         android:id="@+id/textView8"
-
+        android:background="#906E6E6E"
+        android:textColor="#ffffff"
         android:textSize="30dip"
         android:gravity="center"
         android:layout_alignParentRight="true"
-
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
 
@@ -56,8 +63,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView8"
-        android:layout_marginTop="21dp"
-        android:id="@+id/spinner2"
+        android:layout_marginTop="41dp"
+        android:id="@+id/spncat"
+        android:background="#81DAF5"
+
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/bk_gen"
+        android:id="@+id/imageView3"
+        android:alpha=".1"
+
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:background="@drawable/grd_gen_view"
+        android:layout_height="1dp"
+        android:layout_below="@+id/spncat"
+        android:layout_alignParentStart="true"></View>
 </RelativeLayout>

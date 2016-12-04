@@ -12,40 +12,53 @@
             android:title="Ingresar stock" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Buscar producto" />
+            android:icon="@drawable/ic_leftmenu_0"
+            android:title="Buscar  por nombre" />
         <item
             android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Buscar barra" />
+            android:icon="@drawable/ic_leftmenu_1"
+            android:title="Buscar por QR" />
 
 
     </group>
 
-    <item android:title="Reportes rápidos">
+    <item android:title="Reportes">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
+                android:id="@+id/vtasxdepto"
+                android:icon="@drawable/ic_rpt"
                 android:title="Ventas por depto" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
+                android:id="@+id/vtasxsucursal"
+                android:icon="@drawable/ic_rpt"
                 android:title="Ventas por sucursal" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
+                android:id="@+id/vtasxvendedor"
+                android:icon="@drawable/ic_rpt"
                 android:title="Ventas por vendedor" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
+                android:id="@+id/vtasxfechas"
+                android:icon="@drawable/ic_rpt"
                 android:title="Ventas entre fechas" />
 
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
+                android:id="@+id/rptlibre"
+                android:icon="@drawable/ic_rpt"
                 android:title="Libre gerencial" />
         </menu>
     </item>
 
+    <item android:title="Notificaciones">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_notify"
+                android:title="Notificar ofertas a sucursales" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_notify"
+                android:title="Notificar a clientes" />
+
+        </menu>
+    </item>
 </menu>

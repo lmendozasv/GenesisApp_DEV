@@ -1,4 +1,4 @@
-package sv.devla.genesisapp.SearchItemFunction;
+package sv.devla.genesisapp.AddItemsFunction;
 
 
 import android.content.Context;
@@ -7,12 +7,15 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 
-public class CustomAutoCompleteTextChangedListener implements TextWatcher{
+
+
+
+public class NewCustomAutoCompleteTextChangedListener implements TextWatcher{
 
     public static final String TAG = "NewCustomAutoCompleteTextChangedListener.java";
     Context context;
 
-    public CustomAutoCompleteTextChangedListener(Context context){
+    public NewCustomAutoCompleteTextChangedListener(Context context){
         this.context = context;
     }
 
@@ -29,13 +32,14 @@ public class CustomAutoCompleteTextChangedListener implements TextWatcher{
 
     }
 
+
     @Override
     public void onTextChanged(CharSequence userInput, int start, int before, int count) {
 
         // if you want to see in the logcat what the user types
         Log.e(TAG, "User input: " + userInput);
 
-        SearchItemByNameActivity mainActivity = ((SearchItemByNameActivity) context);
+        NewItemStep1Activity mainActivity = ((NewItemStep1Activity) context);
 
         // query the database based on the user input
         mainActivity.item = mainActivity.getItemsFromDb(userInput.toString());

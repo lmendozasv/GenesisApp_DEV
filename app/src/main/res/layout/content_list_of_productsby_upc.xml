@@ -14,9 +14,19 @@
     tools:showIn="@layout/activity_list_of_productsby_upc">
 
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="600dip">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/bk_gen"
+            android:id="@+id/imageView3"
+            android:alpha=".5"
+
+            />
 
         <TextView
             android:text="El producto escaneado tiene varios precios reportados, por favor, elija el que más se adapte"
