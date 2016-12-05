@@ -22,7 +22,7 @@
 
 
     <TextView
-        android:text="Ingrese los parámetros de venta"
+        android:text="Ingrese los parámetros de venta en sala de venta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView4"

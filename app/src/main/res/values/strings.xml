@@ -40,4 +40,5 @@
     <string name="title_activity_availability">AvailabilityActivity</string>
     <string name="title_activity_marca">MarcaActivity</string>
     <string name="title_activity_resumen_final">ResumenFinalActivity</string>
+    <string name="title_activity_select_location">SelectLocationActivity</string>
 </resources>

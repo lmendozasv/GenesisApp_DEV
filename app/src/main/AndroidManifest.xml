@@ -103,7 +103,11 @@
             android:name=".AddItemsFunction.ResumenFinalActivity"
             android:label="@string/title_activity_resumen_final"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AddItemsFunction.PrintQRGenActivity"></activity>
+        <activity android:name=".AddItemsFunction.PrintQRGenActivity" />
+        <activity
+            android:name=".AddItemsFunction.SelectLocationActivity"
+            android:label="@string/title_activity_select_location"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
