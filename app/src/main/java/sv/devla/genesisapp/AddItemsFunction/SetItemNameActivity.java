@@ -19,24 +19,12 @@ import sv.devla.genesisapp.SearchItemFunction.ProductSearchObject;
 
 public class SetItemNameActivity extends AppCompatActivity {
 
-
-
-
-
-
-
-
-
-
     CustomAutoCompleteView myAutoComplete;
 
-    // adapter for auto-complete
     ArrayAdapter<String> myAdapter;
 
-    // for database operations
     DatabaseHandler databaseH;
 
-    // just to add some initial value
     String[] item = new String[] {"Please search..."};
 
     @Override
@@ -44,21 +32,7 @@ public class SetItemNameActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
-
-
-//        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-//        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-        //getSupportActionBar().setDisplayShowTitleEnabled(false);
-
         setContentView(R.layout.activity_new_item_step1);
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
-
-
-
-
-
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -83,7 +57,7 @@ public class SetItemNameActivity extends AppCompatActivity {
         });
 
 
-        this.setTitle("Nuevo producto");
+
         fab.setImageResource(R.drawable.ic_next);
         try{
 
@@ -94,7 +68,7 @@ public class SetItemNameActivity extends AppCompatActivity {
 
 
             // autocompletetextview is in activity_main.xml
-            myAutoComplete = (CustomAutoCompleteView) findViewById(R.id.myautocomplete);
+            myAutoComplete = (CustomAutoCompleteView) findViewById(R.id.customAutoCompleteView);
 
             // add the listener so it will tries to suggest while the user types
             myAutoComplete.addTextChangedListener(new NewCustomAutoCompleteTextChangedListener(this));

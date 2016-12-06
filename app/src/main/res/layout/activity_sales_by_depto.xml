@@ -19,6 +19,9 @@
         android:padding="8dp"
         app:egLegendTextSize="18sp"
         app:egUsePieRotation="true"
+        android:contentDescription="PRUEBA"
+        android:animateLayoutChanges="true"
+        android:background="#ffffff"
         app:egValueTextSize="36sp"/>
 
 </RelativeLayout>

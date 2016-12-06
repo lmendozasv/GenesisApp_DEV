@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
+import java.util.List;
+
 import sv.devla.genesisapp.R;
 import sv.devla.genesisapp.SearchItemFunction.CustomAutoCompleteView;
 
@@ -50,4 +52,22 @@ public class BrandActivity extends AppCompatActivity {
 
     }
 
+
+    public String[] getItemsFromDb(String searchTerm){
+
+        // add items on the array dynamically
+        List<ProductSearchObject> products = databaseH.read(searchTerm);
+        int rowCount = products.size();
+
+        String[] item = new String[rowCount];
+        int x = 0;
+
+        for (ProductSearchObject record : products) {
+
+            item[x] = record.objectName;
+            x++;
+        }
+
+        return item;
+    }
 }
