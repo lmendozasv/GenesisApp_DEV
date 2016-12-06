@@ -219,7 +219,7 @@ public class IdentifyByUPCActivity extends AppCompatActivity {
                                                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                                                     public void onClick(DialogInterface dialog, int which) {
                                                         // continue with delete
-                                                        Intent i = new Intent(IdentifyByUPCActivity.this, NewItemStep1Activity.class);
+                                                        Intent i = new Intent(IdentifyByUPCActivity.this, SetItemNameActivity.class);
                                                         startActivity(i);
                                                         finish();
                                                     }

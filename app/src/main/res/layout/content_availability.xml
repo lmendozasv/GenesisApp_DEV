@@ -12,45 +12,71 @@
     tools:context="sv.devla.genesisapp.AddItemsFunction.AvailabilityActivity"
     tools:showIn="@layout/activity_availability">
 
-    <TextView
-        android:text="Plataformas electrónicas habilitadas"
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView12"
-        android:textSize="30dip"
-        android:background="#906E6E6E"
-        android:textColor="#ffffff"
+        app:srcCompat="@drawable/bk_gen"
+        android:id="@+id/imageView3"
+        android:alpha=".5"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        />
 
+    <TextView
+        android:text="Plataformas electrónicas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/textView12"
         android:gravity="center"
+
+        android:layout_marginTop="50dip"
+        android:textSize="30dip"
+        android:background="#90ffffff"
+        android:textColor="#194B7E"
+
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+
 
     <CheckBox
-        android:text="Aplicación móvil clientes minoristas"
+        android:text="   App Minoristas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="58dp"
-        android:textSize="15dip"
+        android:textSize="20dip"
+        android:layout_marginLeft="50dip"
+        android:background="#90ffffff"
         android:id="@+id/checkBox"
+        android:button="@drawable/chk_selector"
         android:layout_below="@+id/textView12"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
     <CheckBox
-        android:text="Aplicación móvil clientes mayoristas"
+        android:text="   App Mayoristas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/checkBox"
-        android:textSize="15dip"
+        android:textSize="20dip"
+        android:background="#90ffffff"
+        android:layout_marginTop="10dip"
         android:layout_alignStart="@+id/checkBox"
+        android:button="@drawable/chk_selector"
         android:id="@+id/checkBox2"
         android:layout_alignParentEnd="true" />
 
     <CheckBox
-        android:text="Tienda en línea"
+        android:text="   Web (Tienda en línea)"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/checkBox2"
-        android:textSize="15dip"
+        android:button="@drawable/chk_selector"
+        android:textSize="20dip"
+        android:background="#90ffffff"
+        android:layout_marginTop="10dip"
         android:layout_alignStart="@+id/checkBox2"
         android:id="@+id/checkBox3"
         android:layout_alignParentEnd="true" />

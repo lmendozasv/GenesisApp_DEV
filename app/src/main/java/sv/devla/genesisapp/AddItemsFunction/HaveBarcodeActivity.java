@@ -9,21 +9,21 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 
 import sv.devla.genesisapp.R;
 
-public class NewItemStep0Ativity extends AppCompatActivity {
+public class HaveBarcodeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_item_step0_ativity);
+        setContentView(R.layout.activity_have_barcode_activity);
         this.setTitle("Nuevo artículo en Almacén");
 
 
-        Button btn1 = (Button) this.findViewById(R.id.btnsi);
-        Button btn2 = (Button) this.findViewById(R.id.btnno);
+        ImageButton btn1 = (ImageButton) this.findViewById(R.id.btnsi);
+        ImageButton btn2 = (ImageButton) this.findViewById(R.id.btnno);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,12 +31,12 @@ public class NewItemStep0Ativity extends AppCompatActivity {
                 //inicio
 
 if(isNetworkAvailable()){
-    Intent i = new Intent(NewItemStep0Ativity.this, ScanCodeBarActivity.class);
+    Intent i = new Intent(HaveBarcodeActivity.this, ScanCodeBarActivity.class);
     startActivity(i);
     finish();
 }
                 else {
-    new AlertDialog.Builder(NewItemStep0Ativity.this)
+    new AlertDialog.Builder(HaveBarcodeActivity.this)
             .setTitle("No hay internet")
             .setMessage("No hay una conexión de internet estable, por favor solucione el problema de internet e intente de nuevo")
             .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
@@ -63,12 +63,12 @@ if(isNetworkAvailable()){
                 //inicio
 
                 if(isNetworkAvailable()){
-                    Intent i = new Intent(NewItemStep0Ativity.this, NewItemStep1Activity.class);
+                    Intent i = new Intent(HaveBarcodeActivity.this, SetItemNameActivity.class);
                     startActivity(i);
                     finish();
                 }
                 else {
-                    new AlertDialog.Builder(NewItemStep0Ativity.this)
+                    new AlertDialog.Builder(HaveBarcodeActivity.this)
                             .setTitle("No hay internet")
                             .setMessage("No hay una conexión de internet estable, por favor solucione el problema de internet e intente de nuevo")
                             .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {

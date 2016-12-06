@@ -10,7 +10,7 @@
 
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="sv.devla.genesisapp.AddItemsFunction.NewItemStep1Activity"
+    tools:context="sv.devla.genesisapp.AddItemsFunction.SetItemNameActivity"
     tools:showIn="@layout/activity_new_item_step1">
 
 
@@ -31,15 +31,23 @@
         <sv.devla.genesisapp.SearchItemFunction.CustomAutoCompleteView
             android:id="@+id/customAutoCompleteView"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+
             android:completionThreshold="1"
             android:layout_marginLeft="10dip"
             android:textSize="20dip"
+            android:padding="10dip"
             android:layout_marginRight="10dip"
             android:hint="Por ejemplo: Baby car"
             android:layout_marginTop="41dp"
+
             android:layout_below="@+id/textView4"
-            android:layout_alignParentStart="true"></sv.devla.genesisapp.SearchItemFunction.CustomAutoCompleteView>
+
+            android:layout_height="55dp"
+            android:background="@drawable/ic_edittextbk"
+
+            android:layout_alignParentStart="true">
+
+        </sv.devla.genesisapp.SearchItemFunction.CustomAutoCompleteView>
 
         <TextView
             android:text="Ingrese el nombre más significativo que se encuentre en la caja"
@@ -47,9 +55,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/textView4"
             android:textSize="30dip"
-            android:background="#906E6E6E"
-            android:textColor="#ffffff"
-
+            android:background="#90ffffff"
+            android:textColor="#194B7E"
+            android:layout_marginTop="50dip"
             android:gravity="center"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true" />
@@ -63,42 +71,6 @@
             android:layout_height="wrap_content"
             android:text="" />
 
-
-        <TextView
-            android:text="Ingrese o seleccione la marca"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dip"
-            android:id="@+id/textView9"
-            android:gravity="center"
-            android:background="#906E6E6E"
-            android:textColor="#ffffff"
-
-            android:layout_below="@+id/textView4"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="145dp"
-            android:layout_alignParentEnd="true" />
-
-        <View
-            android:layout_width="wrap_content"
-            android:background="@drawable/grd_gen_view"
-            android:layout_height="1dp"
-            android:layout_alignBottom="@+id/myautocomplete"
-            android:layout_alignEnd="@+id/myautocomplete"></View>
-
-        <sv.devla.genesisapp.SearchItemFunction.CustomAutoCompleteView
-            android:id="@+id/myautocomplete"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:completionThreshold="1"
-            android:layout_marginLeft="10dip"
-            android:textSize="20dip"
-            android:layout_marginRight="10dip"
-            android:hint="Por ejemplo: Fisher Price"
-            android:layout_marginTop="27dp"
-            android:layout_below="@+id/textView9"
-            android:layout_alignStart="@+id/customAutoCompleteView">
-        </sv.devla.genesisapp.SearchItemFunction.CustomAutoCompleteView>
 
     </RelativeLayout>
 </ScrollView>

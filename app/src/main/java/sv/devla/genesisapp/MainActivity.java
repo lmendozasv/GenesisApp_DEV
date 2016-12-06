@@ -14,7 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import sv.devla.genesisapp.AddItemsFunction.NewItemStep0Ativity;
+import sv.devla.genesisapp.AddItemsFunction.HaveBarcodeActivity;
 import sv.devla.genesisapp.SearchItemFunction.SearchItemByNameActivity;
 
 public class MainActivity extends AppCompatActivity
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, NewItemStep0Ativity.class);
+                Intent i = new Intent(MainActivity.this, HaveBarcodeActivity.class);
                 startActivity(i);
             }
         });
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        this.setTitle("Variedades Génesis");
+        this.setTitle(" ");
 
         RelativeLayout btn1 = (RelativeLayout) this.findViewById(R.id.btnlist);
         RelativeLayout btn2 = (RelativeLayout) this.findViewById(R.id.btntask);
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 //inicio
-                Intent i = new Intent(MainActivity.this, NewItemStep0Ativity.class);
+                Intent i = new Intent(MainActivity.this, HaveBarcodeActivity.class);
                 startActivity(i);
                 //finish();
                 //fin

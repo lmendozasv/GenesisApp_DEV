@@ -57,14 +57,14 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AddItemsFunction.NewItemStep0Ativity" />
+        <activity android:name=".AddItemsFunction.HaveBarcodeActivity" />
         <activity android:name=".AddItemsFunction.ScanCodeBarActivity" />
         <activity
             android:name=".AddItemsFunction.IdentifyByUPCActivity"
             android:label="@string/title_activity_identify_by_upc"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AddItemsFunction.NewItemStep1Activity"
+            android:name=".AddItemsFunction.SetItemNameActivity"
             android:label="@string/title_activity_new_item_step1"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -107,6 +107,10 @@
         <activity
             android:name=".AddItemsFunction.SelectLocationActivity"
             android:label="@string/title_activity_select_location"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddItemsFunction.BrandActivity"
+            android:label="@string/title_activity_brand"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

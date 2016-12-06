@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -18,7 +17,7 @@ import sv.devla.genesisapp.SearchItemFunction.CustomAutoCompleteView;
 import sv.devla.genesisapp.SearchItemFunction.DatabaseHandler;
 import sv.devla.genesisapp.SearchItemFunction.ProductSearchObject;
 
-public class NewItemStep1Activity extends AppCompatActivity {
+public class SetItemNameActivity extends AppCompatActivity {
 
 
 
@@ -44,9 +43,17 @@ public class NewItemStep1Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+
+
+
+//        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        //getSupportActionBar().setDisplayShowTitleEnabled(false);
+
         setContentView(R.layout.activity_new_item_step1);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
 
 
 
@@ -58,27 +65,30 @@ public class NewItemStep1Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(NewItemStep1Activity.this);
+                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(SetItemNameActivity.this);
                 SharedPreferences.Editor editor = preferences.edit();
 
-                CustomAutoCompleteView etd = (CustomAutoCompleteView) findViewById(R.id.myautocomplete);
+                CustomAutoCompleteView etd = (CustomAutoCompleteView) findViewById(R.id.customAutoCompleteView);
 
                 editor.putString("cTitulo",etd.getText().toString());
                 //editor.putString("cPrecio","$"+PricePrds.get(position));
                 Log.d("nombre",etd.getText().toString());
                 editor.apply();
 
-                Intent i = new Intent(NewItemStep1Activity.this, NewItemAddDepartment.class);
+                //Intent i = new Intent(SetItemNameActivity.this, NewItemAddDepartment.class);
+                Intent i = new Intent(SetItemNameActivity.this, BrandActivity.class);
                 startActivity(i);
 
             }
         });
+
+
         this.setTitle("Nuevo producto");
         fab.setImageResource(R.drawable.ic_next);
         try{
 
             // instantiate database handler
-            databaseH = new DatabaseHandler(NewItemStep1Activity.this);
+            databaseH = new DatabaseHandler(SetItemNameActivity.this);
 
             // put sample data to database
 

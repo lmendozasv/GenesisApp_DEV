@@ -5,6 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:ellipsize="marquee"
-    android:textSize="25dip"
+    android:textSize="20dip"
+
+    android:paddingTop="15dip"
+    android:paddingBottom="15dip"
+
     android:gravity="center"
+    android:background="#194B7E"
+    android:textColor="#ffffff"
     android:textAlignment="inherit"/>

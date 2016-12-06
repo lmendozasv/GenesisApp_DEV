@@ -22,42 +22,37 @@
 
 
     <TextView
-        android:text="Ingrese los parámetros de venta en sala de venta"
+        android:text="Configure los precios y el estado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView4"
-        android:textSize="30dip"
-        android:background="#906E6E6E"
-        android:textColor="#ffffff"
 
-        android:gravity="center"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:text="Precio de lista"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15dip"
         android:id="@+id/textView11"
         android:gravity="center"
-        android:background="#906E6E6E"
-        android:textColor="#ffffff"
 
-        android:layout_below="@+id/textView4"
+        android:layout_marginTop="50dip"
+        android:textSize="30dip"
+        android:background="#90ffffff"
+        android:textColor="#194B7E"
+
+        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="41dp"
         android:layout_alignParentEnd="true" />
+
+
+
+
 
     <TextView
         android:text="Aplica para descuento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="15dip"
+        android:textSize="20dip"
         android:id="@+id/textView9"
         android:gravity="center"
-        android:background="#906E6E6E"
-        android:textColor="#ffffff"
+
+        android:background="#90ffffff"
+        android:textColor="#194B7E"
+
 
         android:layout_marginTop="100dp"
         android:layout_below="@+id/textView11"
@@ -65,7 +60,7 @@
         android:layout_alignParentEnd="true" />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="175dip"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
@@ -73,40 +68,11 @@
         android:id="@+id/tvPRECIO"
         android:textSize="25dip"
         android:paddingLeft="20dip"
-        android:gravity="left"
+        android:gravity="center"
         android:layout_below="@+id/textView11"
-
+        android:hint="Precio base"
         android:layout_centerHorizontal="true" />
 
-    <ToggleButton
-        android:text="ToggleButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView9"
-        android:layout_marginTop="14dp"
-        android:textOn="Si"
-        android:layout_marginLeft="20dip"
-        android:layout_marginRight="20dip"
-        android:textOff="No"
-        android:id="@+id/toggleButton"
-        android:layout_alignEnd="@+id/tvPRECIO"
-        android:layout_alignStart="@+id/tvPRECIO" />
-
-
-    <TextView
-        android:text="Estado del producto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15dip"
-        android:id="@+id/textView98"
-        android:gravity="center"
-        android:background="#906E6E6E"
-        android:textColor="#ffffff"
-
-        android:layout_marginTop="34dp"
-        android:layout_below="@+id/toggleButton"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
 
     <Spinner
         android:layout_width="match_parent"
@@ -124,7 +90,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toggleButton"
-        android:textSize="20dip"
+        android:textSize="25dip"
+        android:layout_marginTop="10dip"
+        android:layout_marginBottom="10dip"
         android:id="@+id/txtdes"
         android:layout_alignStart="@+id/toggleButton"
         android:layout_alignEnd="@+id/toggleButton" />
@@ -139,5 +107,38 @@
         android:gravity="center"
         android:layout_alignTop="@+id/tvPRECIO"
         android:layout_alignStart="@+id/tvPRECIO" />
+
+    <ToggleButton
+        android:text="ToggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:textOn="Si"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:textOff="No"
+        android:id="@+id/toggleButton"
+        android:textSize="20dip"
+        android:padding="10dip"
+        android:background="@drawable/ic_rounded_neutral"
+        android:textColor="#ffffff"
+
+        android:layout_below="@+id/textView9"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="Estado del producto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dip"
+        android:id="@+id/textView98"
+        android:gravity="center"
+
+        android:background="#90ffffff"
+        android:textColor="#194B7E"
+
+        android:layout_below="@+id/txtdes"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
