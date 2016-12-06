@@ -18,6 +18,8 @@ public class HaveBarcodeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_have_barcode_activity);
         this.setTitle("Nuevo artículo en Almacén");
 

@@ -23,7 +23,7 @@
         />
 
     <TextView
-        android:text="Plataformas electrónicas"
+        android:text="Disponibilidad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -79,5 +79,22 @@
         android:layout_marginTop="10dip"
         android:layout_alignStart="@+id/checkBox2"
         android:id="@+id/checkBox3"
+        android:layout_alignParentEnd="true" />
+
+
+
+
+    <CheckBox
+        android:text="   Sucursal Casa Matríz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBox3"
+        android:button="@drawable/chk_selector"
+        android:textSize="20dip"
+        android:checked="true"
+        android:background="#90ffffff"
+        android:layout_marginTop="10dip"
+        android:layout_alignStart="@+id/checkBox3"
+        android:id="@+id/checkBox4"
         android:layout_alignParentEnd="true" />
 </RelativeLayout>
