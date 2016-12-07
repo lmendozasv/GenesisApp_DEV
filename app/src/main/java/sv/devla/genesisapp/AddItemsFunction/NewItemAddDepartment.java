@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
@@ -25,7 +26,7 @@ public class NewItemAddDepartment extends AppCompatActivity {
     private String array_spinnercatjoyeria[];
 
     private String array_spinnercathogar[];
-
+    Spinner scats =null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,6 +78,12 @@ public class NewItemAddDepartment extends AppCompatActivity {
         array_spinner[4]="Joyeria";
         array_spinner[5]="Hogar";
 
+
+        Spinner s = (Spinner) findViewById(R.id.spinner);
+         scats = (Spinner) findViewById(R.id.spncat);
+
+        ArrayAdapter adapter = new ArrayAdapter(this,
+                R.layout.item_spinner, array_spinner);
         array_spinnercatsellos =new String[8];
         array_spinnercatsellos[0]="Camisas";
         array_spinnercatsellos[1]="Calzado";
@@ -128,18 +135,58 @@ public class NewItemAddDepartment extends AppCompatActivity {
         array_spinnercathogar[1]="Muebles";
         array_spinnercathogar[2]="Cocina";
 
-        Spinner s = (Spinner) findViewById(R.id.spinner);
-        Spinner scats = (Spinner) findViewById(R.id.spncat);
 
-        ArrayAdapter adapter = new ArrayAdapter(this,
-                R.layout.item_spinner, array_spinner);
+        final ArrayAdapter adaptercats0 = new ArrayAdapter(this,R.layout.item_spinner, array_spinnercatsellas);
+        final ArrayAdapter adaptercats1 = new ArrayAdapter(this,R.layout.item_spinner, array_spinnercatsellos);
+        final ArrayAdapter adaptercats2 = new ArrayAdapter(this,R.layout.item_spinner, array_spinnercatninos);
+        final ArrayAdapter adaptercats3 = new ArrayAdapter(this,R.layout.item_spinner, array_spinnercatbabyandkids);
+        final ArrayAdapter adaptercats4 = new ArrayAdapter(this,R.layout.item_spinner, array_spinnercatjoyeria);
+        final ArrayAdapter adaptercats5 = new ArrayAdapter(this,R.layout.item_spinner, array_spinnercathogar);
 
-
-        ArrayAdapter adaptercats = new ArrayAdapter(this,
-                R.layout.item_spinner, array_spinnercatninos);
 
         s.setAdapter(adapter);
-        scats.setAdapter(adaptercats);
+
+
+
+        //Listeners
+        s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                // your code here
+
+                if(id==0){
+                    scats.setAdapter(adaptercats0);
+                }
+                if(id==1){
+                    scats.setAdapter(adaptercats1);
+
+                }
+                if(id==2){
+                    scats.setAdapter(adaptercats2);
+
+                }
+                if(id==3){
+                    scats.setAdapter(adaptercats3);
+
+                }
+                if(id==4){
+                    scats.setAdapter(adaptercats4);
+
+                }
+                if(id==5){
+                    scats.setAdapter(adaptercats5);
+
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                // your code here
+            }
+
+        });
+        //Listener fin
 
     }
 
