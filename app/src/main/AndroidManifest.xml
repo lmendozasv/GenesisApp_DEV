@@ -112,7 +112,11 @@
             android:name=".AddItemsFunction.BrandActivity"
             android:label="@string/title_activity_brand"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Reports.SalesByDeptoActivity"></activity>
+        <activity android:name=".Reports.SalesByDeptoActivity" />
+        <activity
+            android:name=".Offers.OfferTypeActivity"
+            android:label="@string/title_activity_offer_type"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
