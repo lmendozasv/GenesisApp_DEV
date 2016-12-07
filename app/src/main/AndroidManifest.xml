@@ -116,6 +116,10 @@
         <activity
             android:name=".Offers.OfferTypeActivity"
             android:label="@string/title_activity_offer_type"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddItemsFunction.PricingByUPCActivity"
+            android:label="@string/title_activity_pricing_by_upc"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

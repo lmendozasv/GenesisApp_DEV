@@ -79,17 +79,26 @@ public class DatabaseUpdaterService extends Service {
             String url_select = myArticleUrl;
 
 
-            ArrayList<NameValuePair> param = new ArrayList<NameValuePair>();
-            param.add(new BasicNameValuePair("formid", "c2"));
-            //param.add(new BasicNameValuePair("email", useremail));
+            String lstidp= "0";
+            try {
+                lstidp = databaseH.getLastProductID().toString();
 
+            }catch(Exception  s){
+                lstidp="0";
+            }
+
+            if(lstidp.equals("")){
+                lstidp="0";
+            }
+
+            ArrayList<NameValuePair> param = new ArrayList<NameValuePair>();
+            param.add(new BasicNameValuePair("formid", "c2.0"));
+            param.add(new BasicNameValuePair("lid", lstidp));
 
             try {
                 String resulting_json = null;
                 ServiceHandler jsonParser = new ServiceHandler();
-                resulting_json = jsonParser.makeServiceCall(url_select,
-                        ServiceHandler.GET, param);
-
+                resulting_json = jsonParser.makeServiceCall(url_select,ServiceHandler.GET, param);
 
                 JSONArray ja;
                 ja = new JSONArray(resulting_json);
@@ -101,15 +110,52 @@ public class DatabaseUpdaterService extends Service {
                         String id=ja.getJSONObject(i).getString("prd_id");
                         Log.d("LOOP:",name.toString()+id.toString());
                         databaseH.create(new ProductSearchObject(name,id));
-
-
-
-
                     }
                 }
             } catch (Exception jds) {
                 Log.d("Prueba",jds.toString());
             }
+
+
+            //brand
+
+            String lstid= "0";
+            try {
+                lstid = databaseH.getLastBrandID().toString();
+
+            }catch(Exception  s){
+                lstid="0";
+            }
+
+            if(lstid.equals("")){
+                lstid="0";
+            }
+
+            ArrayList<NameValuePair> paramBrand = new ArrayList<NameValuePair>();
+            paramBrand.add(new BasicNameValuePair("formid", "c3.0"));
+            paramBrand.add(new BasicNameValuePair("lid", lstid));
+
+            try {
+                String resulting_json = null;
+                ServiceHandler jsonParser = new ServiceHandler();
+                resulting_json = jsonParser.makeServiceCall(url_select,ServiceHandler.GET, paramBrand);
+
+                JSONArray ja;
+                ja = new JSONArray(resulting_json);
+                Log.d("rpt",resulting_json);
+
+                if (ja != null) {
+                    for (int i = 0; i < ja.length(); i++) {
+                        String name =ja.getJSONObject(i).getString("nombre_marca");
+                        String id=ja.getJSONObject(i).getString("id_marca");
+                        Log.d("LOOP:",name.toString()+id.toString());
+                        databaseH.createBrand(new ProductSearchObject(name,id));
+                    }
+                }
+            } catch (Exception jds) {
+                Log.d("Prueba",jds.toString());
+            }
+
             return false;
         }
 

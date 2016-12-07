@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="sv.devla.genesisapp.AddItemsFunction.BrandActivity"
+    tools:context="sv.devla.genesisapp.AddItemsFunction.PricingByUPCActivity"
     tools:showIn="@layout/activity_brand">
 
     <ImageView
@@ -23,7 +23,7 @@
         />
 
     <TextView
-        android:text="Ingrese o seleccione la marca"
+        android:text="Precios"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 

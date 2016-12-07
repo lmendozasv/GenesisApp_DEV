@@ -43,4 +43,5 @@
     <string name="title_activity_select_location">SelectLocationActivity</string>
     <string name="title_activity_brand">BrandActivity</string>
     <string name="title_activity_offer_type">OfferTypeActivity</string>
+    <string name="title_activity_pricing_by_upc">PricingByUPCActivity</string>
 </resources>
