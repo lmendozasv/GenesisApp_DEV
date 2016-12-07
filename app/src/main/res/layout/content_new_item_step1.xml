@@ -10,7 +10,7 @@
 
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="sv.devla.genesisapp.AddItemsFunction.SetItemNameActivity"
+    tools:context="sv.devla.genesisapp.NewItems.SetItemNameActivity"
     tools:showIn="@layout/activity_new_item_step1">
 
 
@@ -28,7 +28,7 @@
             />
 
 
-        <sv.devla.genesisapp.SearchItemFunction.CustomAutoCompleteView
+        <sv.devla.genesisapp.Search.CustomAutoCompleteView
             android:id="@+id/customAutoCompleteView"
             android:layout_width="fill_parent"
 
@@ -47,7 +47,7 @@
 
             android:layout_alignParentStart="true">
 
-        </sv.devla.genesisapp.SearchItemFunction.CustomAutoCompleteView>
+        </sv.devla.genesisapp.Search.CustomAutoCompleteView>
 
         <TextView
             android:text="Ingrese el nombre más significativo que se encuentre en la caja"

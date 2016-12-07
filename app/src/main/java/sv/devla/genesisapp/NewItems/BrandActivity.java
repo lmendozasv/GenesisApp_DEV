@@ -1,4 +1,4 @@
-package sv.devla.genesisapp.AddItemsFunction;
+package sv.devla.genesisapp.NewItems;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,33 +13,29 @@ import android.widget.ArrayAdapter;
 import java.util.List;
 
 import sv.devla.genesisapp.R;
-import sv.devla.genesisapp.SearchItemFunction.CustomAutoCompleteView;
-import sv.devla.genesisapp.SearchItemFunction.DatabaseHandler;
-import sv.devla.genesisapp.SearchItemFunction.ProductSearchObject;
+import sv.devla.genesisapp.Search.CustomAutoCompleteView;
+import sv.devla.genesisapp.Search.DatabaseHandler;
+import sv.devla.genesisapp.Search.ProductSearchObject;
 
-public class SetItemNameActivity extends AppCompatActivity {
-
-    CustomAutoCompleteView myAutoComplete;
-
-    ArrayAdapter<String> myAdapter;
+public class BrandActivity extends AppCompatActivity {
 
     DatabaseHandler databaseH;
-
+    CustomAutoCompleteView myAutoComplete;
+    ArrayAdapter<String> myAdapter;
     String[] item = new String[] {"Please search..."};
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.activity_new_item_step1);
+        setContentView(R.layout.activity_brand);
+      // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+      //  setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(SetItemNameActivity.this);
+                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(BrandActivity.this);
                 SharedPreferences.Editor editor = preferences.edit();
 
                 CustomAutoCompleteView etd = (CustomAutoCompleteView) findViewById(R.id.customAutoCompleteView);
@@ -50,28 +46,18 @@ public class SetItemNameActivity extends AppCompatActivity {
                 editor.apply();
 
                 //Intent i = new Intent(SetItemNameActivity.this, NewItemAddDepartment.class);
-                Intent i = new Intent(SetItemNameActivity.this, BrandActivity.class);
+                Intent i = new Intent(BrandActivity.this, NewItemAddDepartment.class);
                 startActivity(i);
 
             }
         });
 
-
-
         fab.setImageResource(R.drawable.ic_next);
         try{
 
-            // instantiate database handler
-            databaseH = new DatabaseHandler(SetItemNameActivity.this);
-
-            // put sample data to database
-
-
-            // autocompletetextview is in activity_main.xml
+            databaseH = new DatabaseHandler(BrandActivity.this);
             myAutoComplete = (CustomAutoCompleteView) findViewById(R.id.customAutoCompleteView);
-
-            // add the listener so it will tries to suggest while the user types
-            myAutoComplete.addTextChangedListener(new NewCustomAutoCompleteTextChangedListener(this));
+            myAutoComplete.addTextChangedListener(new NewCustomAutoCompleteTextChangedListenerBrand(this));
 
             // set our adapter
             myAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, item);
@@ -82,19 +68,13 @@ public class SetItemNameActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
-
-
     }
 
 
-
-    // this function is used in NewCustomAutoCompleteTextChangedListener.java
     public String[] getItemsFromDb(String searchTerm){
 
         // add items on the array dynamically
-        List<ProductSearchObject> products = databaseH.read(searchTerm);
+        List<ProductSearchObject> products = databaseH.readBrand(searchTerm);
         int rowCount = products.size();
 
         String[] item = new String[rowCount];
@@ -108,5 +88,4 @@ public class SetItemNameActivity extends AppCompatActivity {
 
         return item;
     }
-
 }

@@ -1,4 +1,4 @@
-package sv.devla.genesisapp.AddItemsFunction;
+package sv.devla.genesisapp.NewItems;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -9,12 +9,12 @@ import android.view.View;
 
 import sv.devla.genesisapp.R;
 
-public class NewItemStatus extends AppCompatActivity {
+public class ListOfProductsbyUPCActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_item_status);
+        setContentView(R.layout.activity_list_of_productsby_upc);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -22,7 +22,7 @@ public class NewItemStatus extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Siguiente", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });

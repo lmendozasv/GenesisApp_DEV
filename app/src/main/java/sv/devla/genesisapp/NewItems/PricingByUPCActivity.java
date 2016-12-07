@@ -1,4 +1,4 @@
-package sv.devla.genesisapp.AddItemsFunction;
+package sv.devla.genesisapp.NewItems;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -9,12 +9,12 @@ import android.view.View;
 
 import sv.devla.genesisapp.R;
 
-public class ListOfProductsbyUPCActivity extends AppCompatActivity {
+public class PricingByUPCActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_of_productsby_upc);
+        setContentView(R.layout.activity_pricing_by_upc);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

@@ -1,4 +1,4 @@
-package sv.devla.genesisapp.SearchItemFunction;
+package sv.devla.genesisapp.Search;
 
 import android.app.Service;
 import android.content.Intent;

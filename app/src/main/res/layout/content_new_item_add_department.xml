@@ -9,7 +9,7 @@
 
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="sv.devla.genesisapp.AddItemsFunction.NewItemAddDepartment"
+    tools:context="sv.devla.genesisapp.NewItems.NewItemAddDepartment"
     tools:showIn="@layout/activity_new_item_add_department">
 
     <ImageView

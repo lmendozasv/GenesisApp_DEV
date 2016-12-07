@@ -1,4 +1,4 @@
-package sv.devla.genesisapp.AddItemsFunction;
+package sv.devla.genesisapp.NewItems;
 
 import android.content.Context;
 import android.content.DialogInterface;

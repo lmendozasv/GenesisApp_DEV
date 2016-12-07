@@ -1,20 +1,20 @@
-package sv.devla.genesisapp.AddItemsFunction;
+package sv.devla.genesisapp.NewItems;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import sv.devla.genesisapp.R;
 
-public class PricingByUPCActivity extends AppCompatActivity {
+public class ResumenFinalActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pricing_by_upc);
+        setContentView(R.layout.activity_resumen_final);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -22,10 +22,13 @@ public class PricingByUPCActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent i = new Intent(ResumenFinalActivity.this, PrintQRGenActivity.class);
+                startActivity(i);
             }
         });
+
+        fab.setImageResource(R.drawable.ic_print);
+        this.setTitle("Revisión de datos");
     }
 
 }

@@ -1,4 +1,4 @@
-package sv.devla.genesisapp.AddItemsFunction;
+package sv.devla.genesisapp.NewItems;
 
 import android.app.ProgressDialog;
 import android.content.Context;

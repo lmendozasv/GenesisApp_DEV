@@ -57,59 +57,59 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AddItemsFunction.HaveBarcodeActivity" />
-        <activity android:name=".AddItemsFunction.ScanCodeBarActivity" />
+        <activity android:name=".NewItems.HaveBarcodeActivity" />
+        <activity android:name=".NewItems.ScanCodeBarActivity" />
         <activity
-            android:name=".AddItemsFunction.IdentifyByUPCActivity"
+            android:name=".NewItems.IdentifyByUPCActivity"
             android:label="@string/title_activity_identify_by_upc"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AddItemsFunction.SetItemNameActivity"
+            android:name=".NewItems.SetItemNameActivity"
             android:label="@string/title_activity_new_item_step1"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AddItemsFunction.ListOfProductsbyUPCActivity"
+            android:name=".NewItems.ListOfProductsbyUPCActivity"
             android:label="@string/title_activity_list_of_productsby_upc"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AddItemsFunction.NewItemStatus"
+            android:name=".NewItems.NewItemStatus"
             android:label="@string/title_activity_new_item_status"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AddItemsFunction.NewItemAddDepartment"
+            android:name=".NewItems.NewItemAddDepartment"
             android:label="@string/title_activity_new_item_add_department"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AddItemsFunction.StatusPricingActivity"
+            android:name=".NewItems.StatusPricingActivity"
             android:label="@string/title_activity_prices_range"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AddItemsFunction.NewItemSetStatusActivity"
+            android:name=".NewItems.NewItemSetStatusActivity"
             android:label="@string/title_activity_new_item_set_status"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".SearchItemFunction.SearchItemByNameActivity" />
+        <activity android:name=".Search.SearchItemByNameActivity" />
 
         <service
-            android:name=".SearchItemFunction.DatabaseUpdaterService"
+            android:name=".Search.DatabaseUpdaterService"
             android:enabled="true"
             android:exported="true"
             android:stopWithTask="false" />
 
         <activity
-            android:name=".AddItemsFunction.AvailabilityActivity"
+            android:name=".NewItems.AvailabilityActivity"
             android:label="@string/title_activity_availability"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AddItemsFunction.ResumenFinalActivity"
+            android:name=".NewItems.ResumenFinalActivity"
             android:label="@string/title_activity_resumen_final"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AddItemsFunction.PrintQRGenActivity" />
+        <activity android:name=".NewItems.PrintQRGenActivity" />
         <activity
-            android:name=".AddItemsFunction.SelectLocationActivity"
+            android:name=".NewItems.SelectLocationActivity"
             android:label="@string/title_activity_select_location"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AddItemsFunction.BrandActivity"
+            android:name=".NewItems.BrandActivity"
             android:label="@string/title_activity_brand"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Reports.SalesByDeptoActivity" />
@@ -118,7 +118,7 @@
             android:label="@string/title_activity_offer_type"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AddItemsFunction.PricingByUPCActivity"
+            android:name=".NewItems.PricingByUPCActivity"
             android:label="@string/title_activity_pricing_by_upc"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

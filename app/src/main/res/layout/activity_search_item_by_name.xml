@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:text="" />
 
-    <sv.devla.genesisapp.SearchItemFunction.CustomAutoCompleteView
+    <sv.devla.genesisapp.Search.CustomAutoCompleteView
         android:id="@+id/myautocomplete"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -39,6 +39,6 @@
         android:layout_marginLeft="10dip"
         android:layout_marginRight="10dip"
         android:layout_marginTop="31dp">
-    </sv.devla.genesisapp.SearchItemFunction.CustomAutoCompleteView>
+    </sv.devla.genesisapp.Search.CustomAutoCompleteView>
 
 </RelativeLayout>

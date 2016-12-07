@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import sv.devla.genesisapp.GenUtils.RequestUserPermission;
-import sv.devla.genesisapp.SearchItemFunction.DatabaseUpdaterService;
+import sv.devla.genesisapp.Search.DatabaseUpdaterService;
 
 public class SplashActivity extends Activity {
 

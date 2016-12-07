@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="sv.devla.genesisapp.AddItemsFunction.BrandActivity"
+    tools:context="sv.devla.genesisapp.NewItems.BrandActivity"
     tools:showIn="@layout/activity_brand">
 
     <ImageView
@@ -38,7 +38,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
 
-    <sv.devla.genesisapp.SearchItemFunction.CustomAutoCompleteView
+    <sv.devla.genesisapp.Search.CustomAutoCompleteView
         android:id="@+id/customAutoCompleteView"
         android:layout_width="fill_parent"
 
@@ -52,5 +52,5 @@
         android:padding="10dip"
         android:background="@drawable/ic_edittextbk"
         android:layout_below="@+id/textView16"
-        android:layout_centerHorizontal="true"></sv.devla.genesisapp.SearchItemFunction.CustomAutoCompleteView>
+        android:layout_centerHorizontal="true"></sv.devla.genesisapp.Search.CustomAutoCompleteView>
 </RelativeLayout>

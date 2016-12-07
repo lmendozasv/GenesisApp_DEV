@@ -1,4 +1,4 @@
-package sv.devla.genesisapp.SearchItemFunction;
+package sv.devla.genesisapp.Search;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;

@@ -14,9 +14,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import sv.devla.genesisapp.AddItemsFunction.HaveBarcodeActivity;
+import sv.devla.genesisapp.NewItems.HaveBarcodeActivity;
 import sv.devla.genesisapp.Reports.SalesByDeptoActivity;
-import sv.devla.genesisapp.SearchItemFunction.SearchItemByNameActivity;
+import sv.devla.genesisapp.Search.SearchItemByNameActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
