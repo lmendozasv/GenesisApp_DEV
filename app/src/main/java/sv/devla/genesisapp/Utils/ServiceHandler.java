@@ -1,4 +1,4 @@
-package sv.devla.genesisapp.GenUtils;
+package sv.devla.genesisapp.Utils;
 
 
 import android.util.Log;

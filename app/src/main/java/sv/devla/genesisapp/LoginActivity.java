@@ -42,8 +42,8 @@ package sv.devla.genesisapp;
     import java.util.ArrayList;
     import java.util.List;
 
-    import sv.devla.genesisapp.GenUtils.JSONParserAlt;
-    import sv.devla.genesisapp.GenUtils.ServiceHandler;
+    import sv.devla.genesisapp.Utils.JSONParserAlt;
+    import sv.devla.genesisapp.Utils.ServiceHandler;
 
     import static android.Manifest.permission.READ_CONTACTS;
 

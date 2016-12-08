@@ -13,7 +13,7 @@ import org.json.JSONArray;
 
 import java.util.ArrayList;
 
-import sv.devla.genesisapp.GenUtils.ServiceHandler;
+import sv.devla.genesisapp.Utils.ServiceHandler;
 
 public class DatabaseUpdaterService extends Service {
         public Runnable mRunnable = null;

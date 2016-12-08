@@ -46,7 +46,7 @@ import java.util.Iterator;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import sv.devla.genesisapp.GenUtils.ServiceHandler;
+import sv.devla.genesisapp.Utils.ServiceHandler;
 import sv.devla.genesisapp.R;
 
 public class IdentifyByUPCActivity extends AppCompatActivity {
