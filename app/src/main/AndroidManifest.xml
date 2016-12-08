@@ -72,15 +72,11 @@
             android:label="@string/title_activity_list_of_productsby_upc"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".NewItems.NewItemStatus"
-            android:label="@string/title_activity_new_item_status"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".NewItems.NewItemAddDepartment"
             android:label="@string/title_activity_new_item_add_department"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".NewItems.StatusPricingActivity"
+            android:name=".NewItems.StatusAndCommentsActivity"
             android:label="@string/title_activity_prices_range"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -120,6 +116,34 @@
         <activity
             android:name=".NewItems.PricingByUPCActivity"
             android:label="@string/title_activity_pricing_by_upc"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".NewItems.PricingActivity"
+            android:label="@string/title_activity_pricing"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".NewItems.DiscountsActivity"
+            android:label="@string/title_activity_discounts"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".NewItems.SelectSymbolActivity"
+            android:label="@string/title_activity_select_symbol"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".NewItems.QuantityActivity"
+            android:label="@string/title_activity_quantity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SearchMenuActivity"
+            android:label="@string/title_activity_search_menu"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".OffersMenuActivity"
+            android:label="@string/title_activity_offers_menu"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ReportsMenuActivity"
+            android:label="@string/title_activity_reports_menu"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

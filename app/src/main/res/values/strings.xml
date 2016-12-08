@@ -44,4 +44,11 @@
     <string name="title_activity_brand">BrandActivity</string>
     <string name="title_activity_offer_type">OfferTypeActivity</string>
     <string name="title_activity_pricing_by_upc">PricingByUPCActivity</string>
+    <string name="title_activity_pricing">PricingActivity</string>
+    <string name="title_activity_discounts">DiscountsActivity</string>
+    <string name="title_activity_select_symbol">SelectSymbolActivity</string>
+    <string name="title_activity_quantity">QuantityActivity</string>
+    <string name="title_activity_search_menu">SearchMenuActivity</string>
+    <string name="title_activity_offers_menu">OffersMenuActivity</string>
+    <string name="title_activity_reports_menu">ReportsMenuActivity</string>
 </resources>

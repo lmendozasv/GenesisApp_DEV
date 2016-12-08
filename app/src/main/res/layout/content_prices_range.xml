@@ -9,7 +9,7 @@
 
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="sv.devla.genesisapp.NewItems.StatusPricingActivity"
+    tools:context="sv.devla.genesisapp.NewItems.StatusAndCommentsActivity"
     tools:showIn="@layout/activity_prices_range">
     <ImageView
         android:layout_width="wrap_content"
@@ -22,123 +22,47 @@
 
 
     <TextView
-        android:text="Configure los precios y el estado"
+        android:text="Estado y comentarios"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:id="@+id/textView11"
         android:gravity="center"
-
         android:layout_marginTop="50dip"
         android:textSize="30dip"
         android:background="#90ffffff"
         android:textColor="#194B7E"
-
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
 
 
-
-
-
-    <TextView
-        android:text="Aplica para descuento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20dip"
-        android:id="@+id/textView9"
-        android:gravity="center"
-
-        android:background="#90ffffff"
-        android:textColor="#194B7E"
-
-
-        android:layout_marginTop="100dp"
-        android:layout_below="@+id/textView11"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
-
-    <EditText
-        android:layout_width="175dip"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:ems="10"
-        android:layout_marginTop="27dp"
-        android:id="@+id/tvPRECIO"
-        android:textSize="25dip"
-        android:paddingLeft="20dip"
-        android:gravity="center"
-        android:layout_below="@+id/textView11"
-        android:hint="Precio base"
-        android:layout_centerHorizontal="true" />
-
-
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView98"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="31dp"
         android:background="#81DAF5"
-
-        android:id="@+id/spinner2" />
-
-    <TextView
-        android:text="%"
-        android:gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/toggleButton"
-        android:textSize="25dip"
-        android:layout_marginTop="10dip"
-        android:layout_marginBottom="10dip"
-        android:id="@+id/txtdes"
-        android:layout_alignStart="@+id/toggleButton"
-        android:layout_alignEnd="@+id/toggleButton" />
-
-    <TextView
-        android:text="$"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25dip"
-        android:layout_alignBottom="@+id/tvPRECIO"
-        android:id="@+id/textView13"
-        android:gravity="center"
-        android:layout_alignTop="@+id/tvPRECIO"
-        android:layout_alignStart="@+id/tvPRECIO" />
-
-    <ToggleButton
-        android:text="ToggleButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:textOn="Si"
-        android:layout_marginLeft="20dip"
-        android:layout_marginRight="20dip"
-        android:textOff="No"
-        android:id="@+id/toggleButton"
-        android:textSize="20dip"
-        android:padding="10dip"
-        android:background="@drawable/ic_rounded_neutral"
-        android:textColor="#ffffff"
-
-        android:layout_below="@+id/textView9"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:text="Estado del producto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20dip"
-        android:id="@+id/textView98"
-        android:gravity="center"
-
-        android:background="#90ffffff"
-        android:textColor="#194B7E"
-
-        android:layout_below="@+id/txtdes"
-        android:layout_alignParentStart="true"
+        android:id="@+id/spinner2"
+        android:layout_marginTop="27dp"
+        android:layout_below="@+id/textView11"
         android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:inputType="textMultiLine"
+    android:lines="8"
+        android:textSize="15dip"
+        android:padding="10dip"
+    android:minLines="6"
+    android:gravity="top|left"
+    android:maxLines="10"
+        android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="20dip"
+    android:scrollbars="vertical"
+        android:hint="Comentario"
+        android:background="@drawable/ic_edittextbk"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/spinner2" />
+
 
 </RelativeLayout>

@@ -21,7 +21,7 @@ import android.widget.ToggleButton;
 
 import sv.devla.genesisapp.R;
 
-public class StatusPricingActivity extends AppCompatActivity {
+public class StatusAndCommentsActivity extends AppCompatActivity {
     private String array_spinner[];
     final Context context = this;
     private  TextView txde;
@@ -46,19 +46,19 @@ public class StatusPricingActivity extends AppCompatActivity {
                 String estado = spinner.getSelectedItem().toString();
 
 
-                EditText pre = (EditText)findViewById(R.id.tvPRECIO);
-                String precio = pre.getText().toString();
+              //  EditText pre = (EditText)findViewById(R.id.tvPRECIO);
+               // String precio = pre.getText().toString();
 
-                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(StatusPricingActivity.this);
+                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(StatusAndCommentsActivity.this);
                 SharedPreferences.Editor editor = preferences.edit();
 
-                editor.putString("Precio",precio);
+               // editor.putString("Precio",precio);
                 editor.putString("Estado",estado);
                 Log.d("depto",estado);
 
                 editor.apply();
 
-                Intent i = new Intent(StatusPricingActivity.this, AvailabilityActivity.class);
+                Intent i = new Intent(StatusAndCommentsActivity.this, AvailabilityActivity.class);
                 startActivity(i);
 
             }
@@ -84,8 +84,9 @@ public class StatusPricingActivity extends AppCompatActivity {
 
 
 
-        ToggleButton btndesuento = (ToggleButton)findViewById(R.id.toggleButton) ;
-         txde = (TextView)findViewById(R.id.txtdes);
+        //ToggleButton btndesuento = (ToggleButton)findViewById(R.id.toggleButton) ;
+         //txde = (TextView)findViewById(R.id.txtdes);
+        /*
         btndesuento.setOnCheckedChangeListener( new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton toggleButton, boolean isChecked) {
@@ -136,7 +137,7 @@ public class StatusPricingActivity extends AppCompatActivity {
             }
         }) ;
 
-    }
+    }*/
 ///on hange and selet yes
 
 
@@ -144,4 +145,5 @@ public class StatusPricingActivity extends AppCompatActivity {
     /*
 
     * */
+}
 }
