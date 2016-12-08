@@ -58,7 +58,7 @@ public class StatusAndCommentsActivity extends AppCompatActivity {
 
                 editor.apply();
 
-                Intent i = new Intent(StatusAndCommentsActivity.this, AvailabilityActivity.class);
+                Intent i = new Intent(StatusAndCommentsActivity.this, PricingActivity.class);
                 startActivity(i);
 
             }

@@ -58,7 +58,7 @@ public class NewItemAddDepartment extends AppCompatActivity {
 
                 editor.apply();
 
-                Intent i = new Intent(NewItemAddDepartment.this, StatusAndCommentsActivity.class);
+                Intent i = new Intent(NewItemAddDepartment.this, AvailabilityActivity.class);
                 startActivity(i);
 
             }

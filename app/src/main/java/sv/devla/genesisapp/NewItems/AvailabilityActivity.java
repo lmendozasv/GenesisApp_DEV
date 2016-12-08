@@ -23,7 +23,7 @@ public class AvailabilityActivity extends AppCompatActivity {
 
 
                 //Intent i = new Intent(AvailabilityActivity.this, ResumenFinalActivity.class);
-                Intent i = new Intent(AvailabilityActivity.this, PricingActivity.class);
+                Intent i = new Intent(AvailabilityActivity.this, StatusAndCommentsActivity.class);
                 startActivity(i);
 
 
