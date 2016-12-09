@@ -8,6 +8,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 
 import java.util.List;
@@ -25,7 +27,7 @@ public class SetItemNameActivity extends AppCompatActivity {
 
     DatabaseHandler databaseH;
 
-    String[] item = new String[] {"Please search..."};
+    String[] item = new String[] {""};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,25 +40,34 @@ public class SetItemNameActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(SetItemNameActivity.this);
-                SharedPreferences.Editor editor = preferences.edit();
-
                 CustomAutoCompleteView etd = (CustomAutoCompleteView) findViewById(R.id.customAutoCompleteView);
+                if(etd.length()>3){
+                    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(SetItemNameActivity.this);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString("NNombre",etd.getText().toString());
+                    //editor.putString("cPrecio","$"+PricePrds.get(position));
+                    Log.d("nombre",etd.getText().toString());
+                    editor.apply();
+                    //Intent i = new Intent(SetItemNameActivity.this, NewItemAddDepartment.class);
+                    Intent i = new Intent(SetItemNameActivity.this, BrandActivity.class);
+                    startActivity(i);
+                }
+                else
+                {
+                    Animation shake = AnimationUtils.loadAnimation(SetItemNameActivity.this, R.anim.shake);
+                    etd.startAnimation(shake);
+                }
 
-                editor.putString("cTitulo",etd.getText().toString());
-                //editor.putString("cPrecio","$"+PricePrds.get(position));
-                Log.d("nombre",etd.getText().toString());
-                editor.apply();
-
-                //Intent i = new Intent(SetItemNameActivity.this, NewItemAddDepartment.class);
-                Intent i = new Intent(SetItemNameActivity.this, BrandActivity.class);
-                startActivity(i);
 
             }
         });
-
-
+        final CustomAutoCompleteView etd = (CustomAutoCompleteView) findViewById(R.id.customAutoCompleteView);
+        etd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                etd.showDropDown();
+            }
+        });
 
         fab.setImageResource(R.drawable.ic_next);
         try{

@@ -1,7 +1,5 @@
 package sv.devla.genesisapp.NewItems;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -17,11 +15,12 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Spinner;
+
+import java.util.ArrayList;
 
 import sv.devla.genesisapp.R;
 
-public class  DiscountsActivity extends Activity {
+public class DiscountsActivity extends Activity {
     private ListView myList;
     private MyAdapter myAdapter;
 
@@ -42,17 +41,6 @@ public class  DiscountsActivity extends Activity {
             @Override
             public void onClick(View view) {
 
-                //get seleted
-
-                //Spinner spinner = (Spinner)findViewById(R.id.spinner2);
-
-
-                //String estado = spinner.getSelectedItem().toString();
-
-
-                //  EditText pre = (EditText)findViewById(R.id.tvPRECIO);
-                // String precio = pre.getText().toString();
-
                 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(DiscountsActivity.this);
                 SharedPreferences.Editor editor = preferences.edit();
 
@@ -62,7 +50,7 @@ public class  DiscountsActivity extends Activity {
 
                 editor.apply();
 
-                Intent i = new Intent(DiscountsActivity.this, DiscountsActivity.class);
+                Intent i = new Intent(DiscountsActivity.this, QuantityActivity.class);
                 startActivity(i);
 
             }
@@ -78,7 +66,7 @@ public class  DiscountsActivity extends Activity {
 
         public MyAdapter() {
             mInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            for (int i = 0; i < 20; i++) {
+            for (int i = 0; i < 4; i++) {
                 ListItem listItem = new ListItem();
                 listItem.caption = "Caption" + i;
                 myItems.add(listItem);
@@ -110,7 +98,7 @@ public class  DiscountsActivity extends Activity {
                 holder = (ViewHolder) convertView.getTag();
             }
             //Fill EditText with the value you have in data source
-            holder.caption.setText("test");
+            //holder.caption.setText("test");
             holder.caption.setId(position);
 
             //we need to update adapter once we finish with editing

@@ -8,6 +8,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 
 import java.util.List;
@@ -35,20 +37,28 @@ public class BrandActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                CustomAutoCompleteView etd = (CustomAutoCompleteView) findViewById(R.id.customAutoCompleteView);
+                if(etd.length()>3){
+
+
                 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(BrandActivity.this);
                 SharedPreferences.Editor editor = preferences.edit();
 
-                CustomAutoCompleteView etd = (CustomAutoCompleteView) findViewById(R.id.customAutoCompleteView);
 
-                editor.putString("cTitulo",etd.getText().toString());
+
+                editor.putString("NMarca",etd.getText().toString());
                 //editor.putString("cPrecio","$"+PricePrds.get(position));
-                Log.d("nombre",etd.getText().toString());
+                Log.d("marca",etd.getText().toString());
                 editor.apply();
 
                 //Intent i = new Intent(SetItemNameActivity.this, NewItemAddDepartment.class);
                 Intent i = new Intent(BrandActivity.this, NewItemAddDepartment.class);
                 startActivity(i);
-
+                }
+                else{
+                    Animation shake = AnimationUtils.loadAnimation(BrandActivity.this, R.anim.shake);
+                    etd.startAnimation(shake);
+                }
             }
         });
 

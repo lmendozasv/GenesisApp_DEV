@@ -22,7 +22,7 @@
         />
 
     <TextView
-        android:text="Ingrese o seleccione la marca"
+        android:text="Marcar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView16"
@@ -32,20 +32,21 @@
         android:background="#90ffffff"
         android:textColor="#194B7E"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
 
-
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="40dip"
-        android:layout_marginTop="50dip"
         android:orientation="vertical"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
-        android:id="@+id/linearLayout">
+        android:id="@+id/linearLayout"
+        android:layout_marginTop="10dip"
+        android:layout_below="@+id/textView16"
+        android:layout_alignParentStart="true">
+
         <LinearLayout
             android:layout_height="0dp"
             android:layout_width="match_parent"
@@ -67,7 +68,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/imglist"
-                    android:src="@drawable/ic_main_list"
+                    android:src="@drawable/ic_asterisk"
                     android:backgroundTint="#ffffff"
                     android:layout_alignParentTop="true"
                     android:padding="40dip"
@@ -79,7 +80,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="NUEVO"
+                    android:text="ASTERISCO"
                     android:layout_marginBottom="10dip"
                     android:id="@+id/txtlist"
                     android:textAlignment="center"
@@ -103,7 +104,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/imgtask"
-                    android:src="@drawable/ic_main_tasks"
+                    android:src="@drawable/ic_check"
                     android:backgroundTint="#ffffff"
                     android:layout_alignParentTop="true"
                     android:padding="40dip"
@@ -115,7 +116,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="BUSCAR"
+                    android:text="CHEQUE"
                     android:layout_marginBottom="10dip"
                     android:id="@+id/txttask"
                     android:textAlignment="center"
@@ -126,6 +127,7 @@
             </RelativeLayout>
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_height="0dp"
             android:layout_marginBottom="50dip"
@@ -146,7 +148,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/imageView"
-                    android:src="@drawable/ic_main_map"
+                    android:src="@drawable/ic_dot"
                     android:backgroundTint="#ffffff"
                     android:layout_alignParentTop="true"
                     android:padding="40dip"
@@ -158,7 +160,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="OFERTAS"
+                    android:text="PUNTO"
                     android:layout_marginBottom="10dip"
                     android:id="@+id/textView"
                     android:textAlignment="center"
@@ -181,7 +183,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/imgprofile"
-                    android:src="@drawable/ic_main_profile"
+                    android:src="@drawable/ic_na"
                     android:backgroundTint="#ffffff"
                     android:layout_alignParentTop="true"
                     android:padding="40dip"
@@ -193,7 +195,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="REPORTES"
+                    android:text="SIN MARCA"
                     android:layout_marginBottom="10dip"
                     android:id="@+id/txtprofile"
                     android:textAlignment="center"

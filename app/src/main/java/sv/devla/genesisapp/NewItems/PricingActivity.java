@@ -21,8 +21,7 @@ import java.util.ArrayList;
 import sv.devla.genesisapp.R;
 
 public class PricingActivity extends Activity {
-    private ListView myList;
-    private MyAdapter myAdapter;
+
 
     /** Called when the activity is first created. */
     @Override
@@ -30,99 +29,23 @@ public class PricingActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pricing);
 
-        myList = (ListView) findViewById(R.id.MyList);
-        myList.setItemsCanFocus(true);
-        myAdapter = new MyAdapter();
-        myList.setAdapter(myAdapter);
-
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
-
                 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(PricingActivity.this);
                 SharedPreferences.Editor editor = preferences.edit();
-
                 // editor.putString("Precio",precio);
                 editor.putString("Estado","");
                 Log.d("depto","");
-
                 editor.apply();
-
                 Intent i = new Intent(PricingActivity.this, DiscountsActivity.class);
                 startActivity(i);
 
             }
         });
-
         fab.setImageResource(R.drawable.ic_next);
-
     }
 
-    public class MyAdapter extends BaseAdapter {
-        private LayoutInflater mInflater;
-        public ArrayList myItems = new ArrayList();
-
-        public MyAdapter() {
-            mInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            for (int i = 0; i < 4; i++) {
-                ListItem listItem = new ListItem();
-                listItem.caption = "Caption" + i;
-                myItems.add(listItem);
-            }
-            notifyDataSetChanged();
-        }
-
-        public int getCount() {
-            return myItems.size();
-        }
-
-        public Object getItem(int position) {
-            return position;
-        }
-
-        public long getItemId(int position) {
-            return position;
-        }
-
-        public View getView(int position, View convertView, ViewGroup parent) {
-            ViewHolder holder;
-            if (convertView == null) {
-                holder = new ViewHolder();
-                convertView = mInflater.inflate(R.layout.price_list_item, null);
-                holder.caption = (EditText) convertView
-                        .findViewById(R.id.ItemCaption);
-                convertView.setTag(holder);
-            } else {
-                holder = (ViewHolder) convertView.getTag();
-            }
-            //Fill EditText with the value you have in data source
-            //holder.caption.setText("test");
-            holder.caption.setId(position);
-
-            //we need to update adapter once we finish with editing
-            holder.caption.setOnFocusChangeListener(new OnFocusChangeListener() {
-                public void onFocusChange(View v, boolean hasFocus) {
-                    if (!hasFocus){
-                        final int position = v.getId();
-                        final EditText Caption = (EditText) v;
-                        //myItems.get(position). = Caption.getText().toString();
-                    }
-                }
-            });
-
-            return convertView;
-        }
-    }
-
-    class ViewHolder {
-        EditText caption;
-    }
-
-    class ListItem {
-        String caption;
-    }
 }
