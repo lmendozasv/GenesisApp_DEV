@@ -24,7 +24,7 @@ public class BrandActivity extends AppCompatActivity {
     DatabaseHandler databaseH;
     CustomAutoCompleteView myAutoComplete;
     ArrayAdapter<String> myAdapter;
-    String[] item = new String[] {"Please search..."};
+    String[] item = new String[] {""};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,19 +39,11 @@ public class BrandActivity extends AppCompatActivity {
 
                 CustomAutoCompleteView etd = (CustomAutoCompleteView) findViewById(R.id.customAutoCompleteView);
                 if(etd.length()>3){
-
-
                 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(BrandActivity.this);
                 SharedPreferences.Editor editor = preferences.edit();
-
-
-
                 editor.putString("NMarca",etd.getText().toString());
-                //editor.putString("cPrecio","$"+PricePrds.get(position));
                 Log.d("marca",etd.getText().toString());
                 editor.apply();
-
-                //Intent i = new Intent(SetItemNameActivity.this, NewItemAddDepartment.class);
                 Intent i = new Intent(BrandActivity.this, NewItemAddDepartment.class);
                 startActivity(i);
                 }
