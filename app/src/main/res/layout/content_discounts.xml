@@ -60,7 +60,7 @@
         android:id="@+id/textView32" />
 
     <EditText
-        android:id="@+id/ItemCaption0"
+        android:id="@+id/txtpreciominorista"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         android:layout_marginLeft="10dip"
@@ -81,35 +81,35 @@
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView7"
+        android:id="@+id/ttmin"
         android:gravity="center"
         android:layout_marginTop="140dip"
         android:textSize="20dp"
 
 
         android:layout_marginStart="12dp"
-        android:layout_alignBaseline="@+id/ItemCaption0"
-        android:layout_alignBottom="@+id/ItemCaption0"
+        android:layout_alignBaseline="@+id/txtpreciominorista"
+        android:layout_alignBottom="@+id/txtpreciominorista"
         android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/ItemCaption0" />
+        android:layout_toStartOf="@+id/txtpreciominorista" />
 
     <TextView
         android:text="APP Mayoristas"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView33"
+        android:id="@+id/ttmax"
         android:gravity="center"
         android:layout_marginTop="22dp"
         android:textSize="20dp"
 
 
-        android:layout_below="@+id/ItemCaption0"
-        android:layout_alignStart="@+id/textView7"
+        android:layout_below="@+id/txtpreciominorista"
+        android:layout_alignStart="@+id/ttmin"
         android:layout_alignEnd="@+id/textView32" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/txtpreciomayorista"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         android:layout_marginLeft="10dip"
@@ -120,27 +120,27 @@
         android:inputType="numberDecimal"
         android:hint="$0.00"
         android:gravity="center"
-        android:layout_alignBaseline="@+id/textView33"
-        android:layout_alignBottom="@+id/textView33"
-        android:layout_toEndOf="@+id/textView7"></EditText>
+        android:layout_alignBaseline="@+id/ttmax"
+        android:layout_alignBottom="@+id/ttmax"
+        android:layout_toEndOf="@+id/ttmin"></EditText>
 
     <TextView
         android:text="Web"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView34"
+        android:id="@+id/ttweb"
         android:gravity="center"
 
         android:textSize="20dp"
         android:layout_marginTop="22dp"
 
-        android:layout_below="@+id/editText3"
-        android:layout_alignStart="@+id/textView33"
-        android:layout_alignEnd="@+id/textView33" />
+        android:layout_below="@+id/txtpreciomayorista"
+        android:layout_alignStart="@+id/ttmax"
+        android:layout_alignEnd="@+id/ttmax" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/txtprecioweb"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         android:layout_marginLeft="10dip"
@@ -151,10 +151,10 @@
         android:inputType="numberDecimal"
         android:hint="$0.00"
         android:gravity="center"
-        android:layout_alignBaseline="@+id/textView34"
-        android:layout_alignBottom="@+id/textView34"
+        android:layout_alignBaseline="@+id/ttweb"
+        android:layout_alignBottom="@+id/ttweb"
         android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/textView34"></EditText>
+        android:layout_toEndOf="@+id/ttweb"></EditText>
 
 
     <TextView
@@ -162,19 +162,19 @@
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView34s"
+        android:id="@+id/ttsuc"
         android:gravity="center"
 
         android:textSize="20dp"
         android:layout_marginTop="20dp"
 
-        android:layout_below="@+id/editText4"
-        android:layout_alignStart="@+id/textView34"
-        android:layout_alignEnd="@+id/textView34" />
+        android:layout_below="@+id/txtprecioweb"
+        android:layout_alignStart="@+id/ttweb"
+        android:layout_alignEnd="@+id/ttweb" />
 
 
     <EditText
-        android:id="@+id/editTextsucursal"
+        android:id="@+id/txtpreciosucursal"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         android:layout_marginLeft="10dip"
@@ -185,9 +185,9 @@
         android:inputType="numberDecimal"
         android:hint="$0.00"
         android:gravity="center"
-        android:layout_alignBaseline="@+id/textView34s"
-        android:layout_alignBottom="@+id/textView34s"
-        android:layout_toEndOf="@+id/textView7"></EditText>
+        android:layout_alignBaseline="@+id/ttsuc"
+        android:layout_alignBottom="@+id/ttsuc"
+        android:layout_toEndOf="@+id/ttmin"></EditText>
 
 
 </RelativeLayout>

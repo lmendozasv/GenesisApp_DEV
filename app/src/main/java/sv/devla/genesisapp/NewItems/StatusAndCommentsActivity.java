@@ -25,6 +25,7 @@ public class StatusAndCommentsActivity extends AppCompatActivity {
     private String array_spinner[];
     final Context context = this;
     private  TextView txde;
+    EditText txtcomentario = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +33,7 @@ public class StatusAndCommentsActivity extends AppCompatActivity {
      //   Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
      //   setSupportActionBar(toolbar);
 
+        txtcomentario=(EditText)this.findViewById(R.id.txtcomentario);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -44,7 +46,7 @@ public class StatusAndCommentsActivity extends AppCompatActivity {
 
 
                 String estado = spinner.getSelectedItem().toString();
-
+                String coment = txtcomentario.getText().toString();
 
               //  EditText pre = (EditText)findViewById(R.id.tvPRECIO);
                // String precio = pre.getText().toString();
@@ -52,9 +54,10 @@ public class StatusAndCommentsActivity extends AppCompatActivity {
                 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(StatusAndCommentsActivity.this);
                 SharedPreferences.Editor editor = preferences.edit();
 
-               // editor.putString("Precio",precio);
-                editor.putString("Estado",estado);
-                Log.d("depto",estado);
+                editor.putString("NComentario",coment);
+                editor.putString("NEstado",estado);
+                Log.d("estado",estado);
+                Log.d("comentario",coment);
 
                 editor.apply();
 

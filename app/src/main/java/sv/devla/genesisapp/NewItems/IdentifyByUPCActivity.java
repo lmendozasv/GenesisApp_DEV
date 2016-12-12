@@ -106,7 +106,7 @@ public class IdentifyByUPCActivity extends AppCompatActivity {
 
         fab.setImageResource(R.drawable.ic_next);
 
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(IdentifyByUPCActivity.this);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         upc=preferences.getString("UPC", "0");
         upc2= "";
 
@@ -389,7 +389,7 @@ if(otherCurrency.length()>0){
             mAuthTask = null;
             progress.dismiss();
 
-            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(IdentifyByUPCActivity.this);
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
             upc=preferences.getString("UPC", "0");
             //upc2= "";
 

@@ -46,6 +46,7 @@
         android:layout_alignParentEnd="true" />
 
     <EditText
+        android:id="@+id/txtcomentario"
         android:inputType="textMultiLine"
     android:lines="8"
         android:textSize="15dip"

@@ -14,15 +14,22 @@ import sv.devla.genesisapp.R;
 
 public class AvailabilityActivity extends AppCompatActivity {
 CheckBox appmin,appmax,appweb,phys;
-    String appmin_,appmax_,appweb_,phys_;
+    String appmin_="0";
+    String appmax_="0";
+    String appweb_="0";
+    String phys_="0";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_availability);
+
         appmin = (CheckBox) this.findViewById(R.id.appmin);
         appmax = (CheckBox) this.findViewById(R.id.appmax);
         appweb = (CheckBox) this.findViewById(R.id.appweb);
         phys = (CheckBox) this.findViewById(R.id.phys);
+
+       final SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        final SharedPreferences.Editor editor = preferences.edit();
 
         FloatingActionButton fab = (FloatingActionButton) this.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -35,13 +42,29 @@ CheckBox appmin,appmax,appweb,phys;
                 appmax_="0";
             }
 
-                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(AvailabilityActivity.this);
-                SharedPreferences.Editor editor = preferences.edit();
+                if(appmin.isChecked()){
+                    appmin_="1";
+                }else{
+                    appmin_="0";
+                }
+
+                if(appweb.isChecked()){
+                    appweb_="1";
+                }else{
+                    appweb_="0";
+                }
+
+                if(phys.isChecked()){
+                    phys_="1";
+                }else{
+                    phys_="0";
+                }
+
 
                 editor.putString("NAppmin",appmin_);
                 editor.putString("NAppmax",appmax_);
                 editor.putString("NAppweb",appweb_);
-                editor.putString("Nphys",phys_);
+                editor.putString("NPhys",phys_);
 
                 Log.d("depto",appmin_);
                 Log.d("categ",appmax_);

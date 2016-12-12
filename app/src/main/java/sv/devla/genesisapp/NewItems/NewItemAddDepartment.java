@@ -53,7 +53,7 @@ public class NewItemAddDepartment extends AppCompatActivity {
                 SharedPreferences.Editor editor = preferences.edit();
 
                 editor.putString("NDepto",departamento);
-                editor.putString("CCat",spinnercatss);
+                editor.putString("NCat",spinnercatss);
                 Log.d("depto",departamento);
                 Log.d("categ",spinnercatss);
                 editor.apply();
