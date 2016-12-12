@@ -141,6 +141,10 @@
             android:name=".ReportsMenuActivity"
             android:label="@string/title_activity_reports_menu"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <activity
+            android:name=".NewItems.AlternativeScanActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

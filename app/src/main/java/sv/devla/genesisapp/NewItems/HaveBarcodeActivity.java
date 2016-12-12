@@ -33,8 +33,8 @@ public class HaveBarcodeActivity extends AppCompatActivity {
                 //inicio
 
 if(isNetworkAvailable()){
-   // Intent i = new Intent(HaveBarcodeActivity.this, ScanCodeBarActivity.class);
-    Intent i = new Intent(HaveBarcodeActivity.this, AlternativeScanActivity.class);
+    Intent i = new Intent(HaveBarcodeActivity.this, ScanCodeBarActivity.class);
+    //Intent i = new Intent(HaveBarcodeActivity.this, AlternativeScanActivity.class);
     startActivity(i);
     finish();
 }

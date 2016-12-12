@@ -52,10 +52,10 @@ public class NewItemAddDepartment extends AppCompatActivity {
                 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(NewItemAddDepartment.this);
                 SharedPreferences.Editor editor = preferences.edit();
 
-                editor.putString("cDepartamento",departamento);
-                editor.putString("cCategoria",spinnercatss);
+                editor.putString("NDepto",departamento);
+                editor.putString("CCat",spinnercatss);
                 Log.d("depto",departamento);
-
+                Log.d("categ",spinnercatss);
                 editor.apply();
 
                 Intent i = new Intent(NewItemAddDepartment.this, AvailabilityActivity.class);

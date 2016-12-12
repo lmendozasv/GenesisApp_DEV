@@ -49,7 +49,7 @@
         android:textSize="20dip"
         android:layout_marginLeft="50dip"
         android:background="#90ffffff"
-        android:id="@+id/checkBox"
+        android:id="@+id/appmin"
         android:button="@drawable/chk_selector"
         android:layout_below="@+id/textView12"
         android:layout_alignParentStart="true"
@@ -59,26 +59,26 @@
         android:text="   App Mayoristas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/checkBox"
+        android:layout_below="@+id/appmin"
         android:textSize="20dip"
         android:background="#90ffffff"
         android:layout_marginTop="10dip"
-        android:layout_alignStart="@+id/checkBox"
+        android:layout_alignStart="@+id/appmin"
         android:button="@drawable/chk_selector"
-        android:id="@+id/checkBox2"
+        android:id="@+id/appmax"
         android:layout_alignParentEnd="true" />
 
     <CheckBox
         android:text="   Web (Tienda en línea)"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/checkBox2"
+        android:layout_below="@+id/appmax"
         android:button="@drawable/chk_selector"
         android:textSize="20dip"
         android:background="#90ffffff"
         android:layout_marginTop="10dip"
-        android:layout_alignStart="@+id/checkBox2"
-        android:id="@+id/checkBox3"
+        android:layout_alignStart="@+id/appmax"
+        android:id="@+id/appweb"
         android:layout_alignParentEnd="true" />
 
 
@@ -88,13 +88,13 @@
         android:text="   Sucursal Casa Matríz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/checkBox3"
+        android:layout_below="@+id/appweb"
         android:button="@drawable/chk_selector"
         android:textSize="20dip"
         android:checked="true"
         android:background="#90ffffff"
         android:layout_marginTop="10dip"
-        android:layout_alignStart="@+id/checkBox3"
-        android:id="@+id/checkBox4"
+        android:layout_alignStart="@+id/appweb"
+        android:id="@+id/phys"
         android:layout_alignParentEnd="true" />
 </RelativeLayout>

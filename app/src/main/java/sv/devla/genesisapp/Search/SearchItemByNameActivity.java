@@ -54,6 +54,7 @@ public class SearchItemByNameActivity extends Activity {
     public void insertSampleData(){
 
         // CREATE
+        /*
         databaseH.create( new ProductSearchObject("January","") );
         databaseH.create( new ProductSearchObject("February","") );
         databaseH.create( new ProductSearchObject("March","") );
@@ -75,7 +76,7 @@ public class SearchItemByNameActivity extends Activity {
         databaseH.create( new ProductSearchObject("k12-coffee","") );
         databaseH.create( new ProductSearchObject("view coffee","") );
         databaseH.create( new ProductSearchObject("Indian-coffee-two","") );
-
+*/
     }
 
     // this function is used in NewCustomAutoCompleteTextChangedListener.java
