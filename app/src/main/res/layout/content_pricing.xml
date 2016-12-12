@@ -22,6 +22,23 @@
         />
 
     <TextView
+        android:text="Precio de referencia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/textView13"
+        android:gravity="center"
+
+        android:textSize="20dip"
+        android:background="#90ffffff"
+        android:textColor="#194B7E"
+
+        android:layout_below="@+id/editTextsucursal"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="29dp"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
         android:text="Precios"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -44,12 +61,20 @@
         android:layout_width="wrap_content"
         android:background="@drawable/grd_gen_view"
         android:layout_height="1dp"
-
+        android:id="@+id/vvvs"
         android:layout_below="@+id/textView16"
         android:layout_marginBottom="10dip"
         android:layout_alignParentEnd="true">
 
     </View>
+
+    <TextView
+        android:text="."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView32" />
 
     <EditText
         android:id="@+id/ItemCaption0"
@@ -60,31 +85,142 @@
         android:background="@drawable/ic_edittextbk"
         android:layout_marginRight="30dip"
         android:typeface="monospace"
-
+android:layout_marginTop="20dip"
         android:inputType="numberDecimal"
         android:hint="$0.00"
         android:gravity="center"
-        android:layout_alignBottom="@+id/imageView5"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="123dp">
+        android:layout_below="@+id/vvvs"
+        android:layout_alignStart="@+id/textView32">
     </EditText>
 
     <TextView
-        android:text="TextView"
+        android:text="APP Minoristas"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView7"
         android:gravity="center"
-
+        android:layout_marginTop="140dip"
         android:textSize="20dp"
 
 
-        android:layout_marginTop="73dp"
+        android:layout_marginStart="12dp"
+        android:layout_alignBaseline="@+id/ItemCaption0"
+        android:layout_alignBottom="@+id/ItemCaption0"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/ItemCaption0" />
+
+    <TextView
+        android:text="APP Mayoristas"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView33"
+        android:gravity="center"
+        android:layout_marginTop="22dp"
+        android:textSize="20dp"
 
 
-        android:layout_alignStart="@+id/ItemCaption0"
-        android:layout_marginStart="37dp" />
+        android:layout_below="@+id/ItemCaption0"
+        android:layout_alignStart="@+id/textView7"
+        android:layout_alignEnd="@+id/textView32" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="10dip"
+        android:padding="10dip"
+        android:background="@drawable/ic_edittextbk"
+        android:layout_marginRight="30dip"
+        android:typeface="monospace"
+        android:inputType="numberDecimal"
+        android:hint="$0.00"
+        android:gravity="center"
+        android:layout_alignBaseline="@+id/textView33"
+        android:layout_alignBottom="@+id/textView33"
+        android:layout_toEndOf="@+id/textView7"></EditText>
+
+    <TextView
+        android:text="Web"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView34"
+        android:gravity="center"
+
+        android:textSize="20dp"
+        android:layout_marginTop="22dp"
+
+        android:layout_below="@+id/editText3"
+        android:layout_alignStart="@+id/textView33"
+        android:layout_alignEnd="@+id/textView33" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="10dip"
+        android:padding="10dip"
+        android:background="@drawable/ic_edittextbk"
+        android:layout_marginRight="30dip"
+        android:typeface="monospace"
+        android:inputType="numberDecimal"
+        android:hint="$0.00"
+        android:gravity="center"
+        android:layout_alignBaseline="@+id/textView34"
+        android:layout_alignBottom="@+id/textView34"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/textView34"></EditText>
+
+
+    <TextView
+        android:text="Sucursal"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView34s"
+        android:gravity="center"
+
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+
+        android:layout_below="@+id/editText4"
+        android:layout_alignStart="@+id/textView34"
+        android:layout_alignEnd="@+id/textView34" />
+
+
+    <EditText
+        android:id="@+id/editTextsucursal"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="10dip"
+        android:padding="10dip"
+        android:background="@drawable/ic_edittextbk"
+        android:layout_marginRight="30dip"
+        android:typeface="monospace"
+        android:inputType="numberDecimal"
+        android:hint="$0.00"
+        android:gravity="center"
+        android:layout_alignBaseline="@+id/textView34s"
+        android:layout_alignBottom="@+id/textView34s"
+        android:layout_toEndOf="@+id/textView7"></EditText>
+
+    <TextView
+        android:text="$10.99 - $11.99 "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/textView9"
+        android:gravity="center"
+
+        android:textSize="20dip"
+        android:background="#90ffffff"
+        android:textColor="#194B7E"
+
+        android:layout_below="@+id/textView13"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>

@@ -2,11 +2,13 @@ package sv.devla.genesisapp.NewItems;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -24,6 +26,10 @@ import sv.devla.genesisapp.Utils.ImagePickerCustom;
 public class ResumenFinalActivity extends AppCompatActivity {
     private ImageView imageView;
     Boolean isImageAttached=false;
+    final int PERMISSION_REQUEST_CODEI=100;
+
+//    int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +62,9 @@ public class ResumenFinalActivity extends AppCompatActivity {
 
 
         ImagePicker.setMinQuality(600, 600);
+
+
+
 
     }
 
@@ -147,5 +156,27 @@ public class ResumenFinalActivity extends AppCompatActivity {
         ImagePickerCustom.pickImage(this, "Agregar imagen/foto");
 
 
+    }
+
+
+
+
+
+
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
+
+            case PERMISSION_REQUEST_CODEI:
+                if ((grantResults.length > 0) && (grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+                 //   callMethod();
+                }
+                break;
+
+            default:
+                break;
+        }
     }
 }

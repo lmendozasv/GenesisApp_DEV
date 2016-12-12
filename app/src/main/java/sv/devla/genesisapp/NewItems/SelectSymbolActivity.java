@@ -1,10 +1,12 @@
 package sv.devla.genesisapp.NewItems;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 
 import sv.devla.genesisapp.R;
@@ -20,10 +22,19 @@ public class SelectSymbolActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
+                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(SelectSymbolActivity.this);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("Estado","");
+                Log.d("depto","");
+                editor.apply();
+                  Intent i = new Intent(SelectSymbolActivity.this, ResumenFinalActivity.class);
+                //Intent i = new Intent(QuantityActivity.this, SelectSymbolActivity.class);
+                startActivity(i);
+
             }
         });
+        fab.setImageResource(R.drawable.ic_next);
     }
 
 }

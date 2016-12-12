@@ -46,7 +46,8 @@
         app:srcCompat="@drawable/ic_menu_camera"
         android:id="@+id/imageView4"
         android:layout_below="@+id/textView14"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true" />
 
     <View
         android:layout_width="wrap_content"
@@ -58,172 +59,138 @@
         android:layout_alignParentStart="true"></View>
 
     <TextView
-        android:text="Nombre:"
+        android:text="Philiphs Avent Esterilizer 4 in 1"
         android:layout_width="wrap_content"
-        android:layout_marginLeft="10dip"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:id="@+id/textView18"
-        android:textSize="15dip"
+
+        android:id="@+id/textView8"
+        android:gravity="center"
+
+        android:textSize="20dip"
+        android:background="#90ffffff"
+        android:textColor="#194B7E"
+
         android:layout_below="@+id/view8"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:text="Esterilizer"
-        android:textSize="15dip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView18"
-        android:id="@+id/textView19"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/textView18"
-        android:layout_alignStart="@+id/textView21" />
-
-    <TextView
-        android:text="Marca:"
-        android:layout_width="wrap_content"
-        android:textSize="15dip"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView18"
-        android:layout_alignStart="@+id/textView18"
-        android:layout_marginTop="11dp"
-        android:id="@+id/textView20" />
-
-    <TextView
-        android:text="Philips"
-        android:layout_marginLeft="10dip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView20"
-        android:textSize="15dip"
-        android:id="@+id/textView21"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/textView22" />
-
-    <TextView
-        android:text="Departamento:"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="10dip"
-        android:layout_height="wrap_content"
-        android:textSize="15dip"
-        android:layout_below="@+id/textView20"
-        android:layout_alignStart="@+id/textView20"
-        android:id="@+id/textView22" />
-
-    <TextView
-        android:text="Categoría:"
-        android:textSize="15dip"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="10dip"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView22"
-        android:layout_alignStart="@+id/textView22"
-        android:id="@+id/textView24" />
-
-    <TextView
-        android:text="Bebés y niños"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15dip"
-        android:id="@+id/textView23"
-        android:layout_alignBaseline="@+id/textView22"
-        android:layout_alignBottom="@+id/textView22"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/textView22"
-        android:layout_alignStart="@+id/textView21" />
-
-    <TextView
-        android:text="Accesorios"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15dip"
-        android:layout_alignBottom="@+id/textView24"
-        android:id="@+id/textView25"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/textView24"
-        android:layout_alignStart="@+id/textView23" />
-
-    <TextView
-        android:text="Precio de lista:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15dip"
-        android:layout_below="@+id/textView24"
-        android:layout_alignStart="@+id/textView24"
-        android:layout_marginTop="10dp"
-        android:id="@+id/textView26" />
-
-    <TextView
-        android:text="$ 99.99"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15dip"
-        android:layout_alignTop="@+id/textView26"
-        android:layout_alignStart="@+id/textView25"
-        android:id="@+id/textView27"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
 
     <TextView
-        android:text="Descuento aplicable:"
+        android:text="Philiphs Avent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="15dip"
-        android:id="@+id/textView28"
-        android:layout_below="@+id/textView26"
-        android:layout_alignStart="@+id/textView26"
-        android:layout_marginTop="10dp" />
+
+        android:id="@+id/textView18"
+        android:gravity="center"
+
+        android:layout_marginTop="15dip"
+
+        android:textSize="20dip"
+        android:background="#90ffffff"
+        android:textColor="#194B7E"
+
+        android:layout_below="@+id/textView8"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
 
     <TextView
-        android:text="  50%"
+        android:text="Ellas - Blusas"
         android:layout_width="wrap_content"
-        android:textSize="15dip"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView28"
-        android:layout_toEndOf="@+id/textView28"
-        android:id="@+id/textView29" />
+
+        android:id="@+id/textView18s"
+        android:gravity="center"
+
+        android:layout_marginTop="20dp"
+
+        android:textSize="20dip"
+        android:background="#90ffffff"
+        android:textColor="#194B7E"
+
+        android:layout_below="@+id/textView18"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
-        android:text="Cantidad"
+        android:text="Web - Mayoristas - Sucursal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView28"
-        android:textSize="15dip"
-        android:layout_alignStart="@+id/textView28"
-        android:layout_marginTop="12dp"
-        android:id="@+id/textView30" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15dip"
-        android:inputType="number"
-        android:ems="10"
-        android:text="1"
-        android:id="@+id/editText"
-        android:layout_below="@+id/textView28"
-        android:layout_alignStart="@+id/imageView4" />
+        android:id="@+id/textView19"
+        android:gravity="center"
 
-    <TextView
-        android:text="Comentario:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editText"
-        android:textSize="15dip"
-        android:layout_alignStart="@+id/textView30"
-        android:id="@+id/textView31" />
+        android:layout_marginTop="20dp"
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:gravity="left"
-        android:hint="Comentarios"
-        android:ems="10"
-        android:layout_below="@+id/editText"
-        android:id="@+id/editText2"
+        android:textSize="20dip"
+        android:background="#90ffffff"
+        android:textColor="#194B7E"
+
+        android:layout_below="@+id/textView18s"
         android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/textView31"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Muy buen estado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/textView20"
+        android:gravity="center"
+
+        android:layout_marginTop="20dp"
+
+        android:textSize="20dip"
+        android:background="#90ffffff"
+        android:textColor="#194B7E"
+
+        android:layout_below="@+id/textView19"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Caja en buen estado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/textView21"
+        android:gravity="center"
+
+        android:layout_marginTop="20dp"
+
+        android:textSize="15dip"
+        android:background="#90ffffff"
+        android:textColor="#194B7E"
+
+        android:layout_below="@+id/textView20"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="$10.99 - 20% - 50% "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/textView22"
+        android:gravity="center"
+
+        android:textSize="15dip"
+        android:background="#90ffffff"
+        android:textColor="#194B7E"
+
+        android:layout_alignBottom="@+id/imageView5"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="13dp"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="30dip"
+        android:layout_height="30dip"
+        android:backgroundTint="#000000"
+        android:background="#000000"
+        app:srcCompat="@drawable/ic_asterisk"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/imageView7" />
 
 
 </RelativeLayout>

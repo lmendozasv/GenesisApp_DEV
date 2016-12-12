@@ -5,12 +5,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.widget.ListView;
 
 import sv.devla.genesisapp.R;
 
@@ -31,7 +28,8 @@ public class QuantityActivity extends AppCompatActivity {
                 editor.putString("Estado","");
                 Log.d("depto","");
                 editor.apply();
-                Intent i = new Intent(QuantityActivity.this, ResumenFinalActivity.class);
+              //  Intent i = new Intent(QuantityActivity.this, ResumenFinalActivity.class);
+                Intent i = new Intent(QuantityActivity.this, SelectSymbolActivity.class);
                 startActivity(i);
 
             }
