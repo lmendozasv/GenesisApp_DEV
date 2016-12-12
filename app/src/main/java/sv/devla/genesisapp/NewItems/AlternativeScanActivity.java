@@ -1,7 +1,10 @@
 package sv.devla.genesisapp.NewItems;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 
 import com.google.zxing.Result;
@@ -37,8 +40,28 @@ private ZXingScannerView mScannerView;
         Log.v("LEIDO", rawResult.getText()); // Prints scan results
         Log.v("LEIDO 2", rawResult.getBarcodeFormat().toString()); // Prints the scan format (qrcode, pdf417 etc.)
 
-        // If you would like to resume scanning, call this method below:
+
+
+        // Do something with the result here
+
+        Log.e("CODEBAR LEIDO", rawResult.getText()); // Prints scan results
+        Log.e("CODEBAR FORMATEADO", rawResult.getBarcodeFormat().toString()); // Prints the scan format (qrcode)
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(AlternativeScanActivity.this);
+        SharedPreferences.Editor editor = preferences.edit();
+
+        editor.putString("UPC",rawResult.getText());
+        Log.d("odebar",rawResult.getText());
+        editor.apply();
+
+
+        Intent i = new Intent(AlternativeScanActivity.this, IdentifyByUPCActivity.class);
+        startActivity(i);
+
+
         mScannerView.resumeCameraPreview(this);
+
+        finish();
     }
 
 }
