@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:id="@+id/textView13"
+        android:id="@+id/txtrefer"
         android:gravity="center"
 
         android:textSize="20dip"
@@ -206,7 +206,7 @@
         android:layout_alignBottom="@+id/ttsuc"
         android:layout_toEndOf="@+id/ttmin"></EditText>
 
-    <TextView
+     <TextView
         android:text="$10.99 - $11.99 "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -218,7 +218,7 @@
         android:background="#90ffffff"
         android:textColor="#194B7E"
 
-        android:layout_below="@+id/textView13"
+        android:layout_below="@+id/txtrefer"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
 

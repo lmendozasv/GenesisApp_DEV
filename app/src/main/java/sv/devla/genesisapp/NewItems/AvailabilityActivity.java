@@ -65,6 +65,7 @@ CheckBox appmin,appmax,appweb,phys;
                 editor.putString("NAppmax",appmax_);
                 editor.putString("NAppweb",appweb_);
                 editor.putString("NPhys",phys_);
+                editor.apply();
 
                 Log.d("depto",appmin_);
                 Log.d("categ",appmax_);
