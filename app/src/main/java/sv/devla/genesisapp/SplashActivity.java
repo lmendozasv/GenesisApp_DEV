@@ -1,4 +1,4 @@
-package sv.devla.genesisapp;
+    package sv.devla.genesisapp;
 
 import android.Manifest;
 import android.app.Activity;
@@ -19,7 +19,7 @@ import sv.devla.genesisapp.Search.DatabaseUpdaterService;
 public class SplashActivity extends Activity {
 
     // Splash screen timer
-    private static int SPLASH_TIME_OUT = 1500;
+    private static int SPLASH_TIME_OUT = 2500;
     Intent main=null;
     final int CAMERA=10;
     final int PERMISSION_REQUEST_CODE=10;

@@ -74,4 +74,6 @@ dependencies {
     compile 'com.github.Mariovc:ImagePicker:1.0.2'
 
     compile 'me.dm7.barcodescanner:zxing:1.9'
+
+    compile 'pl.droidsonroids.gif:android-gif-drawable:1.2.3'
 }
