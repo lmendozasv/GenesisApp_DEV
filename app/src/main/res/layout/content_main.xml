@@ -18,6 +18,7 @@
         android:id="@+id/imgLogo"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
+       android:alpha=".6"
         />
 
 
@@ -27,8 +28,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView12"
         android:textSize="30dip"
-        android:background="#F2F2F2"
-        android:textColor="#000000"
+        android:background="#80194B7E"
+        android:textColor="#ffffff"
         android:gravity="center"
         android:layout_marginTop="5dip"
         android:layout_alignParentTop="true"
@@ -39,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="40dip"
-        android:layout_marginTop="50dip"
+        android:layout_marginTop="60dip"
         android:orientation="vertical"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
@@ -47,7 +48,7 @@
         <LinearLayout
             android:layout_height="0dp"
             android:layout_width="match_parent"
-            android:layout_marginBottom="50dip"
+            android:layout_marginBottom="30dip"
             android:layout_weight="1"
             android:orientation="horizontal">
 
@@ -78,10 +79,11 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="NUEVO"
-                    android:layout_marginBottom="10dip"
+                    android:layout_marginBottom="1dip"
                     android:id="@+id/txtlist"
                     android:textAlignment="center"
-                    android:textColor="#ffffff"
+                    android:textColor="#194B7E"
+                    android:background="#ffffff"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true" />
@@ -114,10 +116,11 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="BUSCAR"
-                    android:layout_marginBottom="10dip"
+                    android:layout_marginBottom="1dip"
                     android:id="@+id/txttask"
                     android:textAlignment="center"
-                    android:textColor="#ffffff"
+                    android:textColor="#194B7E"
+                    android:background="#ffffff"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true" />
@@ -157,10 +160,11 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="OFERTAS"
-                    android:layout_marginBottom="10dip"
+                    android:layout_marginBottom="1dip"
                     android:id="@+id/textView"
                     android:textAlignment="center"
-                    android:textColor="#ffffff"
+                    android:textColor="#194B7E"
+                    android:background="#ffffff"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true" />
@@ -192,10 +196,11 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="REPORTES"
-                    android:layout_marginBottom="10dip"
+                    android:layout_marginBottom="1dip"
                     android:id="@+id/txtprofile"
                     android:textAlignment="center"
-                    android:textColor="#ffffff"
+                    android:textColor="#194B7E"
+                    android:background="#ffffff"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true" />
